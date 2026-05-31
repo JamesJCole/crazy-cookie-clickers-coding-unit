@@ -2,6 +2,10 @@
 
 ## What is Iteration? @showdialog
 
+Your code from Activities 1–3 is already loaded — you have a clickable cookie and a working upgrade system!
+
+Now let's take it to the next level: what if the game baked cookies **automatically**, without the player pressing anything?
+
 Imagine a factory machine that stamps out cookies once every second, forever, without stopping.
 
 That is **iteration** (also called a **loop**) — code that runs **again and again**, repeating its actions.

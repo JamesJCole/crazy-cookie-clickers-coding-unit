@@ -2,6 +2,8 @@
 
 ## Nested Conditions @showdialog
 
+Your factory from Activities 1–3 is already loaded — three upgrades, ``else if`` messages, and a for loop calculating production each second!
+
 So far your conditions are fairly straightforward. But what about a situation where you need to check **one thing, and then another thing depending on the first result**?
 
 That is **nested conditions** — an ``if`` block inside another ``if`` block:

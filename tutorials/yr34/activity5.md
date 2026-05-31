@@ -2,16 +2,17 @@
 
 ## Almost there! @showdialog
 
+Your complete game from Activities 1–4 is loaded and ready — clicking, upgrades, and auto bakers all working!
+
 You have learned two big programming ideas:
 
 - **Branching** (if/else) — your code makes decisions
 - **Iteration** (loops) — your code repeats actions
 
-In this final activity, you will bring everything together:
-- Add a **goal** — 500 cookies to win!
-- Check for the win condition inside the loop (**branching inside iteration**)
-- Add a life counter to make it feel like a real game
-- Polish your game and celebrate!
+In this final activity, you will **complete the game** by adding:
+- A **goal** — 500 cookies to win!
+- A win condition check inside the loop (**branching inside iteration**)
+- A splash screen and polish to make it feel finished!
 
 ## Step 1 — Set a goal variable
 

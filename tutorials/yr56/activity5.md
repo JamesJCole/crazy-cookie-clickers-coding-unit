@@ -2,15 +2,14 @@
 
 ## The Final Challenge! @showdialog
 
-This is your **capstone activity** — you will bring together every concept from the previous four activities to build a complete Cookie Empire game.
+Your complete Cookie Empire from Activities 1–4 is loaded — three upgrades, ``else if`` messages, a for loop calculating production, and the nested bonus multiplier are all there!
 
-You will add:
+This is your **capstone activity**. You will add the final pieces to complete the game:
 - A **prestige system** — once you reach the max level, reset with a permanent multiplier (complex branching)
 - A **win condition** — reach the final goal to truly "complete" the empire
-- A **display system** that uses a loop to show all upgrade counts
-- Polish: sounds, effects, and a splash screen
+- A **splash screen** explaining the controls
 
-**Before you start:** Review your code from Activities 1–4. Make sure all three upgrades and the for loop are working correctly.
+Everything you built across four activities comes together here!
 
 This activity covers **AC9TDI6P02** and **AC9TDI6P05**.
 

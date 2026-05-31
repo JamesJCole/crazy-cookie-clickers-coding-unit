@@ -2,6 +2,8 @@
 
 ## What are Multiple Alternatives? @showdialog
 
+Your shop from Activity 1 is already loaded — you can see the cookie, score, and two working upgrades (Grandma and Farm)!
+
 In Activity 1 you used a simple ``if/else`` — two choices. But real programs often need to handle **many different situations**.
 
 In code, ``else if`` lets you chain multiple conditions together:

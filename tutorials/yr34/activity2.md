@@ -2,9 +2,11 @@
 
 ## Welcome back! @showdialog
 
-Your cookie is on screen — now let's make it do something!
+Your code from Activity 1 is already loaded — you can see your cookie sprite on screen!
 
-In this activity you will:
+In this activity you will **add new blocks** to make the cookie respond to button presses.
+
+You will:
 - Add a **cookiesPerClick** variable
 - Make the **A button** bake cookies when pressed
 - Update the score display each time you bake

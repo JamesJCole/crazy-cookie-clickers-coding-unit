@@ -2,6 +2,8 @@
 
 ## Iteration with For Loops @showdialog
 
+Your shop from Activities 1–2 is already loaded — three upgrades, ``else if`` feedback messages, and the synergy bonus are all in place!
+
 So far, your ``cookiesPerSecond`` variable gets updated every time you buy an upgrade. But what if you wanted to *recalculate* the total production from scratch each second?
 
 That is where a **for loop** becomes powerful. A for loop repeats code a set number of times, working through a list of items one by one.

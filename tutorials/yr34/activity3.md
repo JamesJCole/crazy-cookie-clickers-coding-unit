@@ -2,11 +2,13 @@
 
 ## What is Branching? @showdialog
 
-Imagine you are at a fork in the road. You look at a sign: **"If you have a key, go left. Otherwise, go right."**
+Your code from Activities 1 and 2 is already loaded — you can click the cookie and watch the score go up!
 
-That is **branching** — your program makes a **decision** and takes a different path depending on whether something is true or false.
+Now it's time to add an **upgrade shop**. But before a player can buy an upgrade, your program needs to **make a decision**: does the player have enough cookies?
 
-In code, branching looks like this:
+Imagine a fork in the road with a sign: **"If you have a key, go left. Otherwise, go right."**
+
+That is **branching** — your program takes a different path depending on whether something is true or false.
 
 > **if** *you have enough cookies* **then** buy the upgrade
 > **else** show a message saying "not enough cookies!"
