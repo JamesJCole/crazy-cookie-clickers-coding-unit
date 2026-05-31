@@ -6,7 +6,6 @@
 * secondarycolor: #f39c12
 * tertiarycolor: #d35400
 * highlightcolor: #ffeaa7
-* infoUrl: docs/educator-info
 
 ## yr34-path
 
@@ -20,7 +19,7 @@
 * description: Create your cookie and set up the game screen!
 * tags: easy, sprites, variables
 * next: yr34-activity2
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity1
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity1
 
 ### yr34-activity2
 
@@ -29,7 +28,7 @@
 * description: Make your cookie respond when you press a button!
 * tags: easy, events, variables
 * next: yr34-activity3
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity2
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity2
 
 ### yr34-activity3
 
@@ -38,7 +37,7 @@
 * description: Use if/else to decide — can you afford the upgrade?
 * tags: easy, branching, if-else
 * next: yr34-activity4
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity3
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity3
 
 ### yr34-activity4
 
@@ -47,7 +46,7 @@
 * description: Make your game bake cookies automatically — that's a loop!
 * tags: easy, iteration, loops
 * next: yr34-activity5
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity4
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity4
 
 ### yr34-activity5
 
@@ -55,7 +54,7 @@
 * type: tutorial
 * description: Add a win condition and combine everything you've learned!
 * tags: easy, branching, iteration, synthesis
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity5
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr34/activity5
 
 ### yr34-cert
 
@@ -76,7 +75,7 @@
 * description: Set up a cookie shop with multiple upgrades and variables!
 * tags: intermediate, variables, sprites
 * next: yr56-activity2
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity1
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity1
 
 ### yr56-activity2
 
@@ -85,7 +84,7 @@
 * description: Use else if to handle multiple different choices!
 * tags: intermediate, branching, else-if
 * next: yr56-activity3
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity2
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity2
 
 ### yr56-activity3
 
@@ -94,7 +93,7 @@
 * description: Use for loops to calculate how many cookies your factory makes!
 * tags: intermediate, iteration, for-loops
 * next: yr56-activity4
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity3
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity3
 
 ### yr56-activity4
 
@@ -103,7 +102,7 @@
 * description: Combine nested if/else with loops — design your algorithm first!
 * tags: intermediate, branching, iteration, nested
 * next: yr56-activity5
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity4
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity4
 
 ### yr56-activity5
 
@@ -111,7 +110,7 @@
 * type: tutorial
 * description: Build the full Cookie Empire — your capstone challenge!
 * tags: intermediate, capstone
-* url: github:JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity5
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity5
 
 ### yr56-cert
 
