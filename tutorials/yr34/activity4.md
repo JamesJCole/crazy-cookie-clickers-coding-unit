@@ -1,5 +1,66 @@
 # Auto Baker
 
+```template
+let cookies = 0
+let cookiesPerClick = 1
+let upgradeCost = 10
+scene.setBackgroundColor(3)
+let cookie = sprites.create(img`
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
+    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+`, SpriteKind.Player)
+cookie.setPosition(80, 60)
+let upgradeButton = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . 5 5 5 5 5 5 . . . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . 5 5 5 1 1 1 1 5 5 5 . . .
+    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
+    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
+    . . 5 5 5 5 1 1 1 1 5 5 5 5 . .
+    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+    . . . 5 5 5 5 5 5 5 5 5 5 . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Food)
+upgradeButton.setPosition(140, 40)
+info.setScore(0)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    cookies += cookiesPerClick
+    info.setScore(cookies)
+    cookie.startEffect(effects.spray, 200)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= upgradeCost) {
+        cookies -= upgradeCost
+        cookiesPerClick += 1
+        info.setScore(cookies)
+        music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.UntilDone)
+    } else {
+        game.showLongText("Not enough cookies! Keep baking!", DialogLayout.Bottom)
+    }
+})
+```
+
 ## What is Iteration? @showdialog
 
 Your code from Activities 1–3 is already loaded — you have a clickable cookie and a working upgrade system!

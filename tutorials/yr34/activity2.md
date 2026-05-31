@@ -1,5 +1,30 @@
 # Click to Bake
 
+```template
+let cookies = 0
+scene.setBackgroundColor(3)
+let cookie = sprites.create(img`
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
+    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+`, SpriteKind.Player)
+cookie.setPosition(80, 60)
+info.setScore(0)
+```
+
 ## Welcome back! @showdialog
 
 Your code from Activity 1 is already loaded — you can see your cookie sprite on screen!

@@ -1,5 +1,36 @@
 # Upgrade Time!
 
+```template
+let cookies = 0
+let cookiesPerClick = 1
+scene.setBackgroundColor(3)
+let cookie = sprites.create(img`
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
+    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+`, SpriteKind.Player)
+cookie.setPosition(80, 60)
+info.setScore(0)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    cookies += cookiesPerClick
+    info.setScore(cookies)
+    cookie.startEffect(effects.spray, 200)
+})
+```
+
 ## What is Branching? @showdialog
 
 Your code from Activities 1 and 2 is already loaded — you can click the cookie and watch the score go up!

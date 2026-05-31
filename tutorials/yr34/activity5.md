@@ -1,5 +1,84 @@
 # Cookie Champion
 
+```template
+let cookies = 0
+let cookiesPerClick = 1
+let upgradeCost = 10
+let autoBakers = 0
+let autoBakerCost = 50
+scene.setBackgroundColor(3)
+let cookie = sprites.create(img`
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
+    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+`, SpriteKind.Player)
+cookie.setPosition(80, 60)
+let upgradeButton = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . 5 5 5 5 5 5 . . . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . 5 5 5 1 1 1 1 5 5 5 . . .
+    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
+    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
+    . . 5 5 5 5 1 1 1 1 5 5 5 5 . .
+    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
+    . . . 5 5 5 5 5 5 5 5 5 5 . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Food)
+upgradeButton.setPosition(140, 40)
+info.setScore(0)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    cookies += cookiesPerClick
+    info.setScore(cookies)
+    cookie.startEffect(effects.spray, 200)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= upgradeCost) {
+        cookies -= upgradeCost
+        cookiesPerClick += 1
+        info.setScore(cookies)
+        music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.UntilDone)
+    } else {
+        game.showLongText("Not enough cookies! Keep baking!", DialogLayout.Bottom)
+    }
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= autoBakerCost) {
+        cookies -= autoBakerCost
+        autoBakers += 1
+        info.setScore(cookies)
+        autoBakerCost = Math.round(autoBakerCost * 1.5)
+    } else {
+        game.showLongText("Need " + autoBakerCost + " cookies for an auto baker!", DialogLayout.Bottom)
+    }
+})
+game.onUpdateInterval(1000, function () {
+    if (autoBakers > 0) {
+        cookies += autoBakers
+        info.setScore(cookies)
+    }
+})
+```
+
 ## Almost there! @showdialog
 
 Your complete game from Activities 1–4 is loaded and ready — clicking, upgrades, and auto bakers all working!

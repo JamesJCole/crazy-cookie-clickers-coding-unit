@@ -1,5 +1,90 @@
 # Cookie Factory
 
+```template
+let cookies = 0
+let grandmas = 0
+let farms = 0
+let factories = 0
+let grandmaCost = 15
+let farmCost = 100
+let factoryCost = 500
+let cookiesPerSecond = 0
+scene.setBackgroundColor(3)
+let cookie = sprites.create(img`
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
+    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+`, SpriteKind.Player)
+cookie.setPosition(70, 60)
+info.setScore(0)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    cookies += 1
+    info.setScore(cookies)
+    cookie.startEffect(effects.spray, 200)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= grandmaCost) {
+        cookies -= grandmaCost
+        grandmas += 1
+        cookiesPerSecond += 1
+        grandmaCost = Math.round(grandmaCost * 1.15)
+        info.setScore(cookies)
+    } else if (cookies >= grandmaCost / 2) {
+        game.showLongText("Almost there! Need " + (grandmaCost - cookies) + " more cookies.", DialogLayout.Top)
+    } else {
+        game.showLongText("Keep baking! Grandma costs " + grandmaCost + " cookies.", DialogLayout.Bottom)
+    }
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= farmCost) {
+        cookies -= farmCost
+        farms += 1
+        cookiesPerSecond += 8
+        farmCost = Math.round(farmCost * 1.15)
+        info.setScore(cookies)
+    } else if (cookies >= farmCost / 2) {
+        game.showLongText("Almost there! Need " + (farmCost - cookies) + " more for a Farm.", DialogLayout.Top)
+    } else {
+        game.showLongText("Keep baking! Farm costs " + farmCost + " cookies.", DialogLayout.Bottom)
+    }
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= factoryCost) {
+        cookies -= factoryCost
+        factories += 1
+        cookiesPerSecond += 47
+        factoryCost = Math.round(factoryCost * 1.15)
+        info.setScore(cookies)
+    } else if (cookies >= factoryCost / 2) {
+        game.showLongText("Almost there! Need " + (factoryCost - cookies) + " more for a Factory.", DialogLayout.Top)
+    } else {
+        game.showLongText("Keep baking! Factory costs " + factoryCost + " cookies.", DialogLayout.Bottom)
+    }
+})
+game.onUpdateInterval(1000, function () {
+    if (cookiesPerSecond > 0) {
+        cookies += cookiesPerSecond
+        info.setScore(cookies)
+    }
+    if (grandmas >= 5 && farms >= 3) {
+        cookies += 10
+    }
+})
+```
+
 ## Iteration with For Loops @showdialog
 
 Your shop from Activities 1–2 is already loaded — three upgrades, ``else if`` feedback messages, and the synergy bonus are all in place!

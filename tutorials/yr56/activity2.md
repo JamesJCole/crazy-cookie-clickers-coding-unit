@@ -1,5 +1,68 @@
 # Multiple Upgrades
 
+```template
+let cookies = 0
+let grandmas = 0
+let farms = 0
+let grandmaCost = 15
+let farmCost = 100
+let cookiesPerSecond = 0
+scene.setBackgroundColor(3)
+let cookie = sprites.create(img`
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
+    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
+    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
+    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
+    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
+    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
+    . . . . 4 4 4 4 4 4 4 4 . . . .
+`, SpriteKind.Player)
+cookie.setPosition(70, 60)
+info.setScore(0)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    cookies += 1
+    info.setScore(cookies)
+    cookie.startEffect(effects.spray, 200)
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= grandmaCost) {
+        cookies -= grandmaCost
+        grandmas += 1
+        cookiesPerSecond += 1
+        grandmaCost = Math.round(grandmaCost * 1.15)
+        info.setScore(cookies)
+    } else {
+        game.showLongText("Grandma costs " + grandmaCost + " cookies!", DialogLayout.Bottom)
+    }
+})
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (cookies >= farmCost) {
+        cookies -= farmCost
+        farms += 1
+        cookiesPerSecond += 8
+        farmCost = Math.round(farmCost * 1.15)
+        info.setScore(cookies)
+    } else {
+        game.showLongText("Farm costs " + farmCost + " cookies!", DialogLayout.Bottom)
+    }
+})
+game.onUpdateInterval(1000, function () {
+    if (cookiesPerSecond > 0) {
+        cookies += cookiesPerSecond
+        info.setScore(cookies)
+    }
+})
+```
+
 ## What are Multiple Alternatives? @showdialog
 
 Your shop from Activity 1 is already loaded — you can see the cookie, score, and two working upgrades (Grandma and Farm)!
