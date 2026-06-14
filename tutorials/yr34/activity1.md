@@ -25,10 +25,6 @@ Find the ``||scene:set background color to||`` block in the **Scene** drawer and
 
 Click the colour circle and choose a colour you like — orange or pink looks great for a bakery!
 
-```blockconfig.local
-scene.setBackgroundColor(3)
-```
-
 ```blocks
 scene.setBackgroundColor(3)
 ```
@@ -41,12 +37,8 @@ Open the **Variables** drawer and click **Make a Variable**. Name it ``cookies``
 
 Then drag a ``||variables:set cookies to||`` block into ``||loops:on start||`` and make sure it is set to **0**.
 
-```blockconfig.local
-let cookies = 0
-```
 
 ```blocks
-scene.setBackgroundColor(3)
 let cookies = 0
 ```
 
@@ -54,53 +46,44 @@ let cookies = 0
 
 A **sprite** is an image that appears on screen. Let's create our cookie!
 
-Find ``||sprites:set mySprite to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set cookie to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
 
-Click the grey square to open the **sprite editor**. Draw a round cookie shape — use the circle tool and a brown colour. Add some dots for chocolate chips!
-
-When you are done, rename ``mySprite`` to ``cookie`` using the variable name dropdown.
-
-```blockconfig.local
-let cookie = sprites.create(img`
-    . . . . 4 4 4 4 4 4 4 4 . . . .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
-    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . . . . 4 4 4 4 4 4 4 4 . . . .
-`, SpriteKind.Player)
-```
+If you want to customise your cookie, click on the grey circle surrounding the cookie to modify its appearance!
 
 ```blocks
-scene.setBackgroundColor(3)
-let cookies = 0
 let cookie = sprites.create(img`
-    . . . . 4 4 4 4 4 4 4 4 . . . .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
-    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . . . . 4 4 4 4 4 4 4 4 . . . .
+...............................
+............dddddd.............
+.........44444444444d..........
+.......e44444ed44dd444d........
+......e444444eee4444444d.......
+....e44444444eee44444d44dd.....
+....4444edd444e4444444444d.....
+...e444eeed444444444444444d....
+..e4444eeee444444dd444e4d4dd...
+..444444eee44444eed44eee444d...
+.e444444ee444444ee444eee4444d..
+.e44444444444444444444ee44444..
+e44ee444444444444444444444444..
+e44ee44444444ed44444444444444d.
+e444444444444eee4444444dd4444d.
+e444444444444ee4444444eedd444d.
+e444444e4444444444d444eeee444d.
+e44444eee44444444edd44eee4444d.
+ee4444eeee44eed44eee44444444dd.
+.e44444ee444eee44ee44444e444d..
+.ee44444e444eee44444444eeee44..
+.ee4444444444ee44444444eee44d..
+..e444444444444444444444e444...
+..ee444444e44444444444444444...
+...e44444eee444eee444444444....
+....ee444eee444eee444eed44.....
+.....ee444e4444eee44eeee4e.....
+......eee4444444e4444eee.......
+........eee4444444444ee........
+.........eeeee44444ee..........
+............eeeeee.............
+...............................
 `, SpriteKind.Player)
 ```
 
@@ -108,32 +91,47 @@ let cookie = sprites.create(img`
 
 Let's put the cookie in the middle of the screen.
 
-Find ``||sprites:set mySprite position to x 0 y 0||`` in the **Sprites** drawer. Drag it into ``||loops:on start||`` after the sprite creation block. Change the sprite name to ``cookie``.
+Find ``||sprites:set cookie position to x 0 y 0||`` in the **Sprites** drawer. Drag it into ``||loops:on start||`` after the sprite creation block.
 
-Set **x** to **80** and **y** to **60** — that's the centre of the screen!
+Set **x** to **45** and **y** to **70** — that's the centre of the cookie box
 
 ```blocks
-scene.setBackgroundColor(3)
 let cookies = 0
 let cookie = sprites.create(img`
-    . . . . 4 4 4 4 4 4 4 4 . . . .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
-    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . . . . 4 4 4 4 4 4 4 4 . . . .
+...............................
+............dddddd.............
+.........44444444444d..........
+.......e44444ed44dd444d........
+......e444444eee4444444d.......
+....e44444444eee44444d44dd.....
+....4444edd444e4444444444d.....
+...e444eeed444444444444444d....
+..e4444eeee444444dd444e4d4dd...
+..444444eee44444eed44eee444d...
+.e444444ee444444ee444eee4444d..
+.e44444444444444444444ee44444..
+e44ee444444444444444444444444..
+e44ee44444444ed44444444444444d.
+e444444444444eee4444444dd4444d.
+e444444444444ee4444444eedd444d.
+e444444e4444444444d444eeee444d.
+e44444eee44444444edd44eee4444d.
+ee4444eeee44eed44eee44444444dd.
+.e44444ee444eee44ee44444e444d..
+.ee44444e444eee44444444eeee44..
+.ee4444444444ee44444444eee44d..
+..e444444444444444444444e444...
+..ee444444e44444444444444444...
+...e44444eee444eee444444444....
+....ee444eee444eee444eed44.....
+.....ee444e4444eee44eeee4e.....
+......eee4444444e4444eee.......
+........eee4444444444ee........
+.........eeeee44444ee..........
+............eeeeee.............
+...............................
 `, SpriteKind.Player)
-cookie.setPosition(80, 60)
+cookie.setPosition(45, 70)
 ```
 
 ## Step 5 — Show the score
@@ -143,27 +141,42 @@ The score display shows the player how many cookies they have. Find ``||info:set
 Press the **Play** button to test your game. You should see your cookie on screen!
 
 ```blocks
-scene.setBackgroundColor(3)
 let cookies = 0
 let cookie = sprites.create(img`
-    . . . . 4 4 4 4 4 4 4 4 . . . .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . 4 4 4 4 4 e 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 e 4 4 4 4 .
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 e 4 4 4 4 4 e 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 e 4 4 4 4 4 4 4 4 4 4 4 4 4
-    4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4
-    4 4 4 4 4 4 4 4 e 4 4 4 4 4 4 4
-    4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 4
-    . 4 4 4 4 4 4 4 4 4 4 4 4 4 4 .
-    . 4 4 4 4 4 4 4 4 4 4 e 4 4 4 .
-    . . 4 4 4 4 4 4 4 4 4 4 4 4 . .
-    . . . . 4 4 4 4 4 4 4 4 . . . .
+...............................
+............dddddd.............
+.........44444444444d..........
+.......e44444ed44dd444d........
+......e444444eee4444444d.......
+....e44444444eee44444d44dd.....
+....4444edd444e4444444444d.....
+...e444eeed444444444444444d....
+..e4444eeee444444dd444e4d4dd...
+..444444eee44444eed44eee444d...
+.e444444ee444444ee444eee4444d..
+.e44444444444444444444ee44444..
+e44ee444444444444444444444444..
+e44ee44444444ed44444444444444d.
+e444444444444eee4444444dd4444d.
+e444444444444ee4444444eedd444d.
+e444444e4444444444d444eeee444d.
+e44444eee44444444edd44eee4444d.
+ee4444eeee44eed44eee44444444dd.
+.e44444ee444eee44ee44444e444d..
+.ee44444e444eee44444444eeee44..
+.ee4444444444ee44444444eee44d..
+..e444444444444444444444e444...
+..ee444444e44444444444444444...
+...e44444eee444eee444444444....
+....ee444eee444eee444eed44.....
+.....ee444e4444eee44eeee4e.....
+......eee4444444e4444eee.......
+........eee4444444444ee........
+.........eeeee44444ee..........
+............eeeeee.............
+...............................
 `, SpriteKind.Player)
-cookie.setPosition(80, 60)
+cookie.setPosition(45, 70)
 info.setScore(0)
 ```
 
@@ -180,9 +193,43 @@ Your cookie is on screen and ready to bake!
 **Next up:** In Activity 2, you will make your cookie respond when you press a button. Let's bake some cookies!
 
 
+```blockconfig.global
+let cookies = 0
+let cookie = sprites.create(img`
+...............................
+............dddddd.............
+.........44444444444d..........
+.......e44444ed44dd444d........
+......e444444eee4444444d.......
+....e44444444eee44444d44dd.....
+....4444edd444e4444444444d.....
+...e444eeed444444444444444d....
+..e4444eeee444444dd444e4d4dd...
+..444444eee44444eed44eee444d...
+.e444444ee444444ee444eee4444d..
+.e44444444444444444444ee44444..
+e44ee444444444444444444444444..
+e44ee44444444ed44444444444444d.
+e444444444444eee4444444dd4444d.
+e444444444444ee4444444eedd444d.
+e444444e4444444444d444eeee444d.
+e44444eee44444444edd44eee4444d.
+ee4444eeee44eed44eee44444444dd.
+.e44444ee444eee44ee44444e444d..
+.ee44444e444eee44444444eeee44..
+.ee4444444444ee44444444eee44d..
+..e444444444444444444444e444...
+..ee444444e44444444444444444...
+...e44444eee444eee444444444....
+....ee444eee444eee444eed44.....
+.....ee444e4444eee44eeee4e.....
+......eee4444444e4444eee.......
+........eee4444444444ee........
+.........eeeee44444ee..........
+............eeeeee.............
+...............................
+`, SpriteKind.Player)
 
-
-```template
 scene.setBackgroundImage(img`bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffbbfffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -304,5 +351,8 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb`)
 
+
+cookie.setPosition(45, 70)
+info.setScore(0)
 
 ```
