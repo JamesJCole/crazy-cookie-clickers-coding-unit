@@ -1,4 +1,4 @@
-# The Cookie Sprite
+# Making the Cookie Sprite
 
 
 ## Welcome to Cookie Clicker! @showdialog
