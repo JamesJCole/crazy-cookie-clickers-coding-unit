@@ -182,9 +182,6 @@ We want to track how many cookies each press earns. Later we can upgrade this to
 
 Open **Variables**, make a new variable called ``cookiesPerClick``, and set it to **1** inside ``||loops:on start||``.
 
-```blockconfig.local
-let cookiesPerClick = 1
-```
 
 ```blocks
 scene.setBackgroundColor(3)
@@ -234,10 +231,6 @@ An **event** is something that runs when something happens. We want code to run 
 
 Find ``||controller:on A button pressed||`` in the **Controller** drawer. Drag it out — it will sit *beside* your ``||loops:on start||`` block, not inside it.
 
-```blockconfig.local
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-})
-```
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -254,10 +247,6 @@ From **Variables**, drag ``||variables:change cookies by 1||`` inside the event.
 
 Then add ``||info:set score to||`` below it and set the value to the ``cookies`` variable.
 
-```blockconfig.local
-cookies += cookiesPerClick
-info.setScore(cookies)
-```
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -272,9 +261,6 @@ Let's make the cookie look like it's being pressed! Find ``||sprites:cookie star
 
 You can also try other effects — look for ``confetti``, ``hearts``, or ``spray``!
 
-```blockconfig.local
-    cookie.startEffect(effects.confetti, 1000)
-```
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -303,3 +289,13 @@ Your cookie clicker is working!
 - A satisfying effect on each bake
 
 **Coming up:** In Activity 3, we will add an *upgrade* you can buy — but only if you have enough cookies. That means your code will need to **make a decision**. That is called **branching**!
+
+
+```blockconfig.global
+    let cookiesPerClick = 1
+    controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    })
+    cookies += cookiesPerClick
+    info.setScore(cookies)
+    cookie.startEffect(effects.confetti, 1000)
+```
