@@ -6,6 +6,7 @@
 * secondarycolor: #f39c12
 * tertiarycolor: #d35400
 * highlightcolor: #ffeaa7
+* backgroundurl: https://raw.githubusercontent.com/JamesJCole/crazy-cookie-clickers-coding-unit/refs/heads/main/assets/backgrounds/skillmapBackground.png
 
 ## yr34-path
 
