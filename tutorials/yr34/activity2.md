@@ -273,14 +273,14 @@ Let's make the cookie look like it's being pressed! Find ``||sprites:cookie star
 You can also try other effects — look for ``confetti``, ``hearts``, or ``spray``!
 
 ```blockconfig.local
-cookie.startEffect(effects.spray, 200)
+    cookie.startEffect(effects.confetti, 1000)
 ```
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     cookies += cookiesPerClick
     info.setScore(cookies)
-    cookie.startEffect(effects.spray, 200)
+    cookie.startEffect(effects.confetti, 1000)
 })
 ```
 
