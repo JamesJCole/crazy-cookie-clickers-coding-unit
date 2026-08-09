@@ -37,7 +37,7 @@ ee4444eeee44eed44eee44444444dd.
 ............eeeeee.............
 ...............................
 `, SpriteKind.Player)
-cookie.setPosition(80, 60)
+cookie.setPosition(48, 70)
 info.setScore(0)
 
 scene.setBackgroundImage(img`bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
