@@ -175,7 +175,7 @@ You will:
 - Update the score display each time you bake
 - Add a fun effect to celebrate each click
 
-Pressing the **A key** on your keyboard (or the A button on a controller) will be your "click"!
+Pressing the **A key** on your keyboard (or the A button on a controller) will be your "click"!!
 
 ## Step 1 — Add a cookiesPerClick variable
 
@@ -227,13 +227,10 @@ info.setScore(0)
 ```
 ## Step 2 - Add a new button
 We are going to repeat what we learned in the last activity. 
-We need to add the both an 'A' button 'sprite' and a label for it.
+We need to add the both an 'A' button 'sprite' and position it.
 Find ``||sprites:set AButton to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
-Find ``||sprites:set BakeLabel to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
-
-We also want to set the position of both the button and the label.
 Find ``||sprites:set AButton position to x 100 y 49||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
-Find ``||sprites:set BakeLabel position to x 100 y 60||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+
 
 ```blockconfig.local
     let AButton = sprites.create(img`
@@ -254,6 +251,8 @@ Find ``||sprites:set BakeLabel position to x 100 y 60||`` in the **Sprites** dra
     . . . . 6 6 6 6 6 . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+    
+AButton.setPosition(100, 49)
 ```
 
 ```blocks
@@ -275,6 +274,15 @@ let AButton = sprites.create(img`
     . . . . 6 6 6 6 6 . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+AButton.setPosition(100, 49)
+```
+
+## Step 3 - Setup a label
+Now that we have a button, we will also want to create a label for it.
+Find ``||sprites:set BakeLabel to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set BakeLabel position to x 100 y 60||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+
+```blockconfig.local
 let BakeLabel = sprites.create(img`
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
@@ -286,8 +294,21 @@ let BakeLabel = sprites.create(img`
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     `, SpriteKind.Player)
+BakeLabel.setPosition(100, 60)
+```
 
-AButton.setPosition(100, 49)
+```blocks
+let BakeLabel = sprites.create(img`
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    f 1 1 f f f 1 1 1 f f 1 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 f 1 1 f 
+    f 1 1 f f f 1 1 f f f f 1 f f 1 1 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 1 1 1 f 
+    f 1 1 f f f f 1 f 1 1 f 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    `, SpriteKind.Player)
 BakeLabel.setPosition(100, 60)
 ```
 
