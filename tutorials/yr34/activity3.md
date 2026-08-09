@@ -219,7 +219,7 @@ In this activity you will:
 - Use an ``||logic:if/else||`` block to decide what happens
 - Learn to read comparison operators like **>=** (greater than or equal to)
 
-This is **AC9TDI4P02** — branching!
+This is **AC9TDI4P02** — branching!!
 
 ## Step 1 — Add upgrade variables
 
@@ -366,41 +366,7 @@ UpgradeLabel.setPosition(138, 60)
 
 
 
-
-
-
-
-## Step 2 — Add an upgrade sprite
-
-Let's show a small "upgrade" button on the right side of the screen so players know they can buy something.
-
-Create a new sprite. Draw a simple star or coin shape (or use yellow circles). Call it ``upgradeButton``.
-
-Position it at **x: 140, y: 40**.
-
-```blocks
-let upgradeButton = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . 5 5 5 5 5 5 . . . . .
-    . . . . 5 5 5 5 5 5 5 5 . . . .
-    . . . 5 5 5 1 1 1 1 5 5 5 . . .
-    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
-    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
-    . . 5 5 5 5 1 1 1 1 5 5 5 5 . .
-    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-    . . . 5 5 5 5 5 5 5 5 5 5 . . .
-    . . . . 5 5 5 5 5 5 5 5 . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-`, SpriteKind.Food)
-upgradeButton.setPosition(140, 40)
-```
-
-## Step 3 — Add a UP button event
+## Step 4 — Add a UP button event
 
 Add a new ``||controller:on up button pressed||`` event. This will handle buying the upgrade. It lives beside your other blocks.
 
@@ -414,7 +380,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 — The if/else decision (BRANCHING!)
+## Step 5 — The if/else decision (BRANCHING!)
 
 This is the key step! We need our code to ask:
 **"Does the player have enough cookies?"**
@@ -439,7 +405,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5 — The TRUE branch (can afford)
+## Step 6 — The TRUE branch (can afford)
 
 Inside the **if** (top) section, add the code for when the player CAN afford the upgrade:
 
@@ -467,7 +433,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 6 — The FALSE branch (cannot afford)
+## Step 7 — The FALSE branch (cannot afford)
 
 Inside the **else** (bottom) section, add the code for when the player **cannot** afford it:
 
@@ -490,7 +456,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 7 — Test your branching!
+## Step 8 — Test your branching!
 
 Press **Play** and test both paths:
 
