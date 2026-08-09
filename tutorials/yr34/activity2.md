@@ -235,6 +235,27 @@ We also want to set the position of both the button and the label.
 Find ``||sprites:set AButton position to x 100 y 49||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
 Find ``||sprites:set BakeLabel position to x 100 y 60||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
 
+```blockconfig.local
+    let AButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . 7 7 7 1 1 . . . . . 
+    . . . . 7 7 7 7 7 7 7 1 . . . 
+    . . 6 7 7 7 7 7 7 7 7 7 1 . . 
+    . 6 7 7 7 7 7 6 6 7 7 7 7 . . 
+    . 6 7 7 7 7 6 7 7 6 7 7 7 1 . 
+    6 6 7 7 7 7 6 6 6 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 7 7 7 7 7 7 7 7 . 
+    . 6 6 7 7 7 7 7 7 7 7 7 7 . . 
+    . 6 6 6 7 7 7 7 7 7 7 7 6 . . 
+    . . 6 6 6 7 7 7 7 7 6 6 . . . 
+    . . . 6 6 6 6 6 6 6 6 . . . . 
+    . . . . 6 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+```
+
 ```blocks
 let AButton = sprites.create(img`
     . . . . . . . . . . . . . . . 
