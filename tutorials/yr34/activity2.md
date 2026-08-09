@@ -312,7 +312,7 @@ let BakeLabel = sprites.create(img`
 BakeLabel.setPosition(100, 60)
 ```
 
-## Step 3 — Add a button event
+## Step 4 — Add a button event
 
 An **event** is something that runs when something happens. We want code to run when the player presses the A button.
 
@@ -324,7 +324,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 — Add cookies when the button is pressed
+## Step 5 — Add cookies when the button is pressed
 
 Inside the ``||controller:on A button pressed||`` event, we need to:
 1. Add ``cookiesPerClick`` to our ``cookies`` variable
@@ -342,7 +342,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5 — Add a fun effect!
+## Step 6 — Add a fun effect!
 
 Let's make the cookie look like it's being pressed! Find ``||sprites:cookie start effect spray||`` in the **Sprites** drawer and add it inside the event.
 
@@ -391,7 +391,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 6 — Test your game!
+## Step 7 — Test your game!
 
 Press the **Play** button and try pressing **A** (or **Space** on your keyboard).
 
@@ -481,8 +481,9 @@ Your cookie clicker is working!
     BakeLabel.setPosition(100, 60)
     let cookiesPerClick = 1
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-        cookies += cookiesPerClick
-        info.setScore(cookies)
-        cookie.startEffect(effects.confetti, 1000)
+
     })
+    cookies += cookiesPerClick
+    info.setScore(cookies)
+    cookie.startEffect(effects.confetti, 1000)
 ```

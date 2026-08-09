@@ -191,7 +191,37 @@ let BakeLabel = sprites.create(img`
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     `, SpriteKind.Player)
-
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+let UpgradeLabel = sprites.create(img`
+    ..fffffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111111f.
+    f11f11f1ffff1fff11ffff11ff11fff11fff1f11f
+    f11f11f1f11f1f1111f11f1f11f1f11f1f111f11f
+    f11f11f1ffff1f1ff1ffff1ffff1f11f1fff1f11f
+    f11f11f1f1111f11f1f1f11f11f1f11f1f111111f
+    f11ffff1f1111ffff1f11f1f11f1fff11fff1f11f
+    .f1111111111111111111111111111111111111f.
+    ..fffffffffffffffffffffffffffffffffffff..
+    `, SpriteKind.Player)
+UpgradeLabel.setPosition(138, 60)
+UpButton.setPosition(138, 49)
 AButton.setPosition(100, 49)
 BakeLabel.setPosition(100, 60)
 let upgradeButton = sprites.create(img`
@@ -219,7 +249,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.setScore(cookies)
     cookie.startEffect(effects.spray, 200)
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= upgradeCost) {
         cookies -= upgradeCost
         cookiesPerClick += 1
@@ -229,7 +259,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Not enough cookies! Keep baking!", DialogLayout.Bottom)
     }
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= autoBakerCost) {
         cookies -= autoBakerCost
         autoBakers += 1

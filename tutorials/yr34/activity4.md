@@ -189,7 +189,37 @@ let BakeLabel = sprites.create(img`
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     `, SpriteKind.Player)
-
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+let UpgradeLabel = sprites.create(img`
+    ..fffffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111111f.
+    f11f11f1ffff1fff11ffff11ff11fff11fff1f11f
+    f11f11f1f11f1f1111f11f1f11f1f11f1f111f11f
+    f11f11f1ffff1f1ff1ffff1ffff1f11f1fff1f11f
+    f11f11f1f1111f11f1f1f11f11f1f11f1f111111f
+    f11ffff1f1111ffff1f11f1f11f1fff11fff1f11f
+    .f1111111111111111111111111111111111111f.
+    ..fffffffffffffffffffffffffffffffffffff..
+    `, SpriteKind.Player)
+UpgradeLabel.setPosition(138, 60)
+UpButton.setPosition(138, 49)
 AButton.setPosition(100, 49)
 BakeLabel.setPosition(100, 60)
 let upgradeButton = sprites.create(img`
@@ -217,7 +247,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.setScore(cookies)
     cookie.startEffect(effects.spray, 200)
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= upgradeCost) {
         cookies -= upgradeCost
         cookiesPerClick += 1
@@ -305,14 +335,14 @@ info.setScore(0)
 
 ## Step 2 — Add a buy auto baker button
 
-We need a way to buy an auto baker. Let's use the **Up** button on the controller (the Up arrow key on a keyboard).
+We need a way to buy an auto baker. Let's use the **Right** button on the controller (the Right arrow key on a keyboard).
 
-Add a new ``||controller:on up button pressed||`` event.
+Add a new ``||controller:on right button pressed||`` event.
 
 Inside it, add an ``||logic:if/else||`` block that checks: **if cookies >= autoBakerCost**.
 
 ```blockconfig.local
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= autoBakerCost) {
     } else {
     }
@@ -320,7 +350,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 ```
 
 ```blocks
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= autoBakerCost) {
     } else {
     }
@@ -336,7 +366,7 @@ Inside the **if** branch (when the player can afford it):
 4. Make the cost go up a little (multiply by 1.5 and round — find ``||math:round||`` in the Math drawer)
 
 ```blocks
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= autoBakerCost) {
         cookies -= autoBakerCost
         autoBakers += 1
@@ -395,7 +425,7 @@ game.onUpdateInterval(1000, function () {
 Press **Play** and:
 
 1. Bake **50 cookies** by pressing A many times
-2. Press the **Up arrow** to buy an auto baker
+2. Press the **right arrow** to buy an auto baker
 3. Watch the score — it should go up by 1 every second automatically, without pressing anything!
 4. Try buying 2 or 3 auto bakers — they all run at once in the loop!
 

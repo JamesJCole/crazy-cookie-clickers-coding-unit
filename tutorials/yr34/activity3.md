@@ -276,6 +276,100 @@ cookie.setPosition(80, 60)
 info.setScore(0)
 ```
 
+
+## Step 2 - Add a new button for 'upgrade'
+We need to add the both an 'up' button 'sprite' and position it.
+Find ``||sprites:set UpButton to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set UpButton position to x 138 y 49||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+
+
+```blockconfig.local
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+    
+UpButton.setPosition(138, 49)
+```
+
+```blocks
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+UpButton.setPosition(138, 49)
+```
+
+## Step 3 - Setup a label
+Now that we have an UP button, we will also want to create a label for it.
+Find ``||sprites:set BakeLabel to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set BakeLabel position to x 100 y 60||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+
+```blockconfig.local
+let UpgradeLabel = sprites.create(img`
+    ..fffffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111111f.
+    f11f11f1ffff1fff11ffff11ff11fff11fff1f11f
+    f11f11f1f11f1f1111f11f1f11f1f11f1f111f11f
+    f11f11f1ffff1f1ff1ffff1ffff1f11f1fff1f11f
+    f11f11f1f1111f11f1f1f11f11f1f11f1f111111f
+    f11ffff1f1111ffff1f11f1f11f1fff11fff1f11f
+    .f1111111111111111111111111111111111111f.
+    ..fffffffffffffffffffffffffffffffffffff..
+    `, SpriteKind.Player)
+UpgradeLabel.setPosition(138, 60)
+```
+
+```blocks
+let UpgradeLabel = sprites.create(img`
+    ..fffffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111111f.
+    f11f11f1ffff1fff11ffff11ff11fff11fff1f11f
+    f11f11f1f11f1f1111f11f1f11f1f11f1f111f11f
+    f11f11f1ffff1f1ff1ffff1ffff1f11f1fff1f11f
+    f11f11f1f1111f11f1f1f11f11f1f11f1f111111f
+    f11ffff1f1111ffff1f11f1f11f1fff11fff1f11f
+    .f1111111111111111111111111111111111111f.
+    ..fffffffffffffffffffffffffffffffffffff..
+    `, SpriteKind.Player)
+UpgradeLabel.setPosition(138, 60)
+```
+
+
+
+
+
+
+
+
 ## Step 2 — Add an upgrade sprite
 
 Let's show a small "upgrade" button on the right side of the screen so players know they can buy something.
@@ -306,17 +400,17 @@ let upgradeButton = sprites.create(img`
 upgradeButton.setPosition(140, 40)
 ```
 
-## Step 3 — Add a B button event
+## Step 3 — Add a UP button event
 
-Add a new ``||controller:on B button pressed||`` event. This will handle buying the upgrade. It lives beside your other blocks.
+Add a new ``||controller:on up button pressed||`` event. This will handle buying the upgrade. It lives beside your other blocks.
 
 ```blockconfig.local
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
@@ -325,7 +419,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 This is the key step! We need our code to ask:
 **"Does the player have enough cookies?"**
 
-Inside the ``||controller:on B button pressed||`` event, add an ``||logic:if true then else||`` block from the **Logic** drawer.
+Inside the ``||controller:on up button pressed||`` event, add an ``||logic:if true then else||`` block from the **Logic** drawer.
 
 In the **condition** slot (where it says ``true``), drag in a comparison block: ``||logic:0 >= 0||``. Change the first **0** to the ``cookies`` variable and the second **0** to ``upgradeCost``.
 
@@ -338,7 +432,7 @@ if (cookies >= upgradeCost) {
 ```
 
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= upgradeCost) {
     } else {
     }
@@ -362,7 +456,7 @@ music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.UntilDone)
 ```
 
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= upgradeCost) {
         cookies -= upgradeCost
         cookiesPerClick += 1
@@ -384,7 +478,7 @@ game.showLongText("Not enough cookies! Keep baking!", DialogLayout.Bottom)
 ```
 
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= upgradeCost) {
         cookies -= upgradeCost
         cookiesPerClick += 1
@@ -400,9 +494,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 Press **Play** and test both paths:
 
-1. Press **B** before you have 10 cookies — what happens? (the ELSE branch)
+1. Press **UP** before you have 10 cookies — what happens? (the ELSE branch)
 2. Bake 10 cookies by pressing **A** ten times
-3. Press **B** again — what happens now? (the IF branch)
+3. Press **UP** again — what happens now? (the IF branch)
 
 Your ``cookiesPerClick`` goes up, so you earn more cookies per press!
 
