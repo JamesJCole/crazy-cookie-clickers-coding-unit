@@ -222,25 +222,6 @@ UpgradeLabel.setPosition(138, 60)
 UpButton.setPosition(138, 49)
 AButton.setPosition(100, 49)
 BakeLabel.setPosition(100, 60)
-let upgradeButton = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . 5 5 5 5 5 5 . . . . .
-    . . . . 5 5 5 5 5 5 5 5 . . . .
-    . . . 5 5 5 1 1 1 1 5 5 5 . . .
-    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
-    . . 5 5 5 1 5 5 5 5 1 5 5 5 . .
-    . . 5 5 5 5 1 1 1 1 5 5 5 5 . .
-    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-    . . 5 5 5 5 5 5 5 5 5 5 5 5 . .
-    . . . 5 5 5 5 5 5 5 5 5 5 . . .
-    . . . . 5 5 5 5 5 5 5 5 . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-`, SpriteKind.Food)
-upgradeButton.setPosition(140, 40)
 info.setScore(0)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     cookies += cookiesPerClick

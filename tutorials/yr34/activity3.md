@@ -330,8 +330,8 @@ UpButton.setPosition(138, 49)
 
 ## Step 3 - Setup a label
 Now that we have an UP button, we will also want to create a label for it.
-Find ``||sprites:set BakeLabel to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
-Find ``||sprites:set BakeLabel position to x 100 y 60||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set UpgradeLabel to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set UpgradeLabel position to x 100 y 60||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
 
 ```blockconfig.local
 let UpgradeLabel = sprites.create(img`
