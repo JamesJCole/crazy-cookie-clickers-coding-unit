@@ -328,8 +328,8 @@ Your cookie clicker is working!
     `, SpriteKind.Player)
     let cookiesPerClick = 1
     controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+        cookies += cookiesPerClick
+        info.setScore(cookies)
+        cookie.startEffect(effects.confetti, 1000)
     })
-    cookies += cookiesPerClick
-    info.setScore(cookies)
-    cookie.startEffect(effects.confetti, 1000)
 ```
