@@ -393,7 +393,7 @@ It helps players know how close they are to winning. Let's add a **countdown** l
 
 Add a ``||game:on game update every 1000 ms||`` (or add inside your existing one):
 
-Use ``||game:show long text||`` to display: ``"Goal: " + goal + " cookies"`` — but only show this at the start. You can display a ``splash`` screen at the start using ``||game:splash||``.
+Use ``||game:splash||`` to display: ``"Goal: " + goal `` — but only show this at the start.
 
 Add a ``||game:splash||`` block inside ``||loops:on start||`` after all your setup:
 
@@ -401,11 +401,12 @@ Add a ``||game:splash||`` block inside ``||loops:on start||`` after all your set
 game.splash("Bake " + goal + " cookies to win! Press A to bake.")
 ```
 
-## Step 4 — Upgrade the click sound
+## Step 4 — Add a cookie bake sound!
 
 Update your ``||controller:on A button pressed||`` event to play a sound when clicking:
 
-Add ``||music:play tone Middle C for 1 beat||`` or ``||music:play melody ba ding||`` inside the A button event for extra feedback.
+Add ``||music:play tone Middle C for 1 beat||`` or ``||music:play sound knock||`` inside the A button event for extra feedback.
+Make sure to select **in background** to make sure the sound can 'overlap'.
 
 ```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -446,6 +447,4 @@ Here is what you accomplished:
 | **Branching** | ``if/else`` blocks for upgrades and win checking |
 | **Iteration** | ``on game update every 1000ms`` loops automatically |
 
-**Australian Curriculum (AC9TDI4P02):** You followed, described, and *implemented* an algorithm involving sequencing, branching, and iteration as a visual program. Well done!
 
-Collect your **Certificate** and show your teacher!
