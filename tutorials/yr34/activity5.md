@@ -220,6 +220,37 @@ let UpgradeLabel = sprites.create(img`
     .f1111111111111111111111111111111111111f.
     ..fffffffffffffffffffffffffffffffffffff..
     `, SpriteKind.Player)
+let RightButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . 6 9 9 1 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    9 1 1 9 9 9 9 9 1 1 1 1 . 4 . 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    6 6 6 6 9 9 9 1 6 6 6 6 . 4 . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 6 6 6 6 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+let AutoBakerLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111111111111111f.
+    f111ff11f11f1fff1ffff1111fff111ff11f11f1fff1fff11f
+    f11f11f1f11f11f11f11f1111f1f11f11f1f1f11f111f1f11f
+    f11ffff1f11f11f11f11f1ff1ffff1ffff1ff111ff11fff11f
+    f11f11f1f11f11f11f11f1111f11f1f11f1f1f11f111ff111f
+    f11f11f1ffff11f11ffff1111ffff1f11f1f11f1fff1f1f11f
+    .f1111111111111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffffffffffff..
+    `, SpriteKind.Player)
+AutoBakerLabel.setPosition(100, 99)
+RightButton.setPosition(100, 88)
 UpgradeLabel.setPosition(138, 60)
 UpButton.setPosition(138, 49)
 AButton.setPosition(100, 49)

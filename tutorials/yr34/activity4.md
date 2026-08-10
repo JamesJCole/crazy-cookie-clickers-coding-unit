@@ -314,7 +314,95 @@ cookie.setPosition(80, 60)
 info.setScore(0)
 ```
 
-## Step 2 — Add a buy auto baker button
+## Step 2 - Add a new button for 'auto baker'
+We need to add the both an 'right' button 'sprite' and position it.
+Find ``||sprites:set RightButton to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set RightButton position to x 100 y 88||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+
+
+```blockconfig.local
+let RightButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . 6 9 9 1 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    9 1 1 9 9 9 9 9 1 1 1 1 . 4 . 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    6 6 6 6 9 9 9 1 6 6 6 6 . 4 . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 6 6 6 6 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+    
+RightButton.setPosition(100, 88)
+```
+
+```blocks
+let RightButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . 6 9 9 1 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    9 1 1 9 9 9 9 9 1 1 1 1 . 4 . 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    6 6 6 6 9 9 9 1 6 6 6 6 . 4 . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 6 6 6 6 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+RightButton.setPosition(100, 88)
+```
+
+## Step 3 - Setup a label
+Now that we have an Right button, we will also want to create an 'Auto Baker' label for it.
+Find ``||sprites:set AutoBakerLabel to sprite of kind Player||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+Find ``||sprites:set AutoBakerLabel position to x 100 y 99||`` in the **Sprites** drawer. Drag it into ``||loops:on start||``.
+
+```blockconfig.local
+let AutoBakerLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111111111111111f.
+    f111ff11f11f1fff1ffff1111fff111ff11f11f1fff1fff11f
+    f11f11f1f11f11f11f11f1111f1f11f11f1f1f11f111f1f11f
+    f11ffff1f11f11f11f11f1ff1ffff1ffff1ff111ff11fff11f
+    f11f11f1f11f11f11f11f1111f11f1f11f1f1f11f111ff111f
+    f11f11f1ffff11f11ffff1111ffff1f11f1f11f1fff1f1f11f
+    .f1111111111111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffffffffffff..
+    `, SpriteKind.Player)
+AutoBakerLabel.setPosition(100, 99)
+```
+
+```blocks
+let AutoBakerLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111111111111111f.
+    f111ff11f11f1fff1ffff1111fff111ff11f11f1fff1fff11f
+    f11f11f1f11f11f11f11f1111f1f11f11f1f1f11f111f1f11f
+    f11ffff1f11f11f11f11f1ff1ffff1ffff1ff111ff11fff11f
+    f11f11f1f11f11f11f11f1111f11f1f11f1f1f11f111ff111f
+    f11f11f1ffff11f11ffff1111ffff1f11f1f11f1fff1f1f11f
+    .f1111111111111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffffffffffff..
+    `, SpriteKind.Player)
+AutoBakerLabel.setPosition(100, 99)
+```
+
+
+
+## Step 4 — Add a buy auto baker button
 
 We need a way to buy an auto baker. Let's use the **Right** button on the controller (the Right arrow key on a keyboard).
 
@@ -338,7 +426,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 3 — Buy the auto baker
+## Step 5 — Buy the auto baker
 
 Inside the **if** branch (when the player can afford it):
 1. Subtract ``autoBakerCost`` from ``cookies``
@@ -359,7 +447,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 — The loop! (ITERATION)
+## Step 6 — The loop! (ITERATION)
 
 Here comes the important part — the **loop**!
 
@@ -377,7 +465,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 5 — Bake inside the loop
+## Step 7 — Bake inside the loop
 
 Inside the ``||game:on game update every 1000 ms||`` block, add an ``||logic:if||`` block:
 
@@ -401,7 +489,7 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 6 — Test your auto baker!
+## Step 8 — Test your auto baker!
 
 Press **Play** and:
 
