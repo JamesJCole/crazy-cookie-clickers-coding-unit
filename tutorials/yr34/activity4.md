@@ -256,7 +256,7 @@ In this activity you will:
 - Use a ``||game:on game update every||`` block — a loop that runs every second
 - Inside the loop, check **if** any auto bakers are working, then add cookies
 
-This combines **branching** AND **iteration** — both from AC9TDI4P02!
+This combines **branching** AND **iteration** — both from AC9TDI4P02!!
 
 ## Step 1 — Add the autoBakers variable
 

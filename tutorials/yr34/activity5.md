@@ -301,7 +301,7 @@ You have learned two big programming ideas:
 In this final activity, you will **complete the game** by adding:
 - A **goal** — 500 cookies to win!
 - A win condition check inside the loop (**branching inside iteration**)
-- A splash screen and polish to make it feel finished!
+- A splash screen and polish to make it feel finished!!
 
 ## Step 1 — Set a goal variable
 
