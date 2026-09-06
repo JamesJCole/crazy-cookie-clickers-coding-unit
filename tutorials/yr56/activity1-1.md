@@ -458,7 +458,7 @@ let FarmLabel = sprites.create(img`
     .f11111111111111111111111f.
     ..fffffffffffffffffffffff..
 `, SpriteKind.Player)
-FarmLabel.setPosition(100, 1000)
+FarmLabel.setPosition(100, 100)
 ```
 
 ```blocks
@@ -475,7 +475,7 @@ let FarmLabel = sprites.create(img`
     ..fffffffffffffffffffffff..
 `, SpriteKind.Player)
 
-FarmLabel.setPosition(100, 1000)
+FarmLabel.setPosition(100, 100)
 ```
 
 
