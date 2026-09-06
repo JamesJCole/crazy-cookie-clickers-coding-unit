@@ -79,8 +79,18 @@
 * type: tutorial
 * description: Set up a cookie shop with multiple upgrades and variables!
 * tags: intermediate, variables, sprites
-* next: yr56-activity2
+* next: yr56-activity1-1, yr56-activity2
 * url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity1
+
+
+### yr56-activity1-1
+
+* name: Build the Shop part 2
+* type: tutorial
+* description: Set up helpfull information for the player!
+* tags: eaay, variables, sprites
+* next: yr56-activity2
+* url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity1-1
 
 ### yr56-activity2
 
@@ -116,7 +126,7 @@
 
 * name: Cookie Empire
 * type: tutorial
-* description: Build the full Cookie Empire — your capstone challenge!
+* description: Build the full Cookie Empire — your final challenge!
 * tags: intermediate, capstone
 
 * url: https://github.com/JamesJCole/crazy-cookie-clickers-coding-unit/tutorials/yr56/activity5
