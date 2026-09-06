@@ -162,6 +162,139 @@ ee4444eeee44eed44eee44444444dd.
 ............eeeeee.............
 ...............................
 `, SpriteKind.Player)
+let AButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . 7 7 7 1 1 . . . . . 
+    . . . . 7 7 7 7 7 7 7 1 . . . 
+    . . 6 7 7 7 7 7 7 7 7 7 1 . . 
+    . 6 7 7 7 7 7 6 6 7 7 7 7 . . 
+    . 6 7 7 7 7 6 7 7 6 7 7 7 1 . 
+    6 6 7 7 7 7 6 6 6 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 7 7 7 7 7 7 7 7 . 
+    . 6 6 7 7 7 7 7 7 7 7 7 7 . . 
+    . 6 6 6 7 7 7 7 7 7 7 7 6 . . 
+    . . 6 6 6 7 7 7 7 7 6 6 . . . 
+    . . . 6 6 6 6 6 6 6 6 . . . . 
+    . . . . 6 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+
+let BakeLabel = sprites.create(img`
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    f 1 1 f f f 1 1 1 f f 1 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 f 1 1 f 
+    f 1 1 f f f 1 1 f f f f 1 f f 1 1 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 1 1 1 f 
+    f 1 1 f f f f 1 f 1 1 f 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    `, SpriteKind.Player)
+
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+
+let GrandmaLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffff..
+    .f11111111111111111111111111111111111111f.
+    f11fff11ffff11ff11ff11fff11ff1ff11ff11f11f
+    f11f1111f11f1f11f1f1f1f11f1f1f1f1f11f1f11f
+    f11f1ff1ffff1ffff1f1f1f11f1f111f1ffff1f11f
+    f11f11f1f1f11f11f1f1f1f11f1f111f1f11f1111f
+    f11ffff1f11f1f11f1f1f1fff11f111f1f11f1f11f
+    .f11111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+let RightButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . 6 9 9 1 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    9 1 1 9 9 9 9 9 1 1 1 1 . 4 . 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    6 6 6 6 9 9 9 1 6 6 6 6 . 4 . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 6 6 6 6 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+    
+
+let FarmLabel = sprites.create(img`
+    ..fffffffffffffffffffffff..
+    .f11111111111111111111111f.
+    f11fff11ff11ffff1ff1ff1f11f
+    f11f111f11f1f11f1f1f1f1f11f
+    f11fff1ffff1ffff1f111f1f11f
+    f11f111f11f1f1f11f111f1111f
+    f11f111f11f1f11f1f111f1f11f
+    .f11111111111111111111111f.
+    ..fffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+let LeftButton = sprites.create(img`
+    ................
+    ................
+    .......69911....
+    .......69999....
+    .......69999....
+    .......69999....
+    .4.6911999991111
+    54.6999999999999
+    54.6999999999999
+    54.6999999999999
+    .4..666699916666
+    .......69991....
+    .......69991....
+    .......69999....
+    .......66666....
+    ................
+`, SpriteKind.Player)
+
+let FactoryLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111f.
+    f11fff11ff11fff1fff1ffff1ffff1f1f1f11f
+    f11f111f11f1f1111f11f11f1f11f1f1f1f11f
+    f11fff1ffff1f1111f11f11f1ffff11f11f11f
+    f11f111f11f1f1111f11f11f1f1f111f11111f
+    f11f111f11f1fff11f11ffff1f11f11f11f11f
+    .f1111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+BakeLabel.setPosition(100, 62)
+AButton.setPosition(100, 51)
+UpButton.setPosition(136, 51)
+GrandmaLabel.setPosition(136, 62)
+RightButton.setPosition(100, 90)
+FarmLabel.setPosition(100, 1000)
+LeftButton.setPosition(136, 90)
+FactoryLabel.setPosition(136, 100)
 cookie.setPosition(45, 75)
 info.setScore(0)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -169,7 +302,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.setScore(cookies)
     cookie.startEffect(effects.spray, 200)
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= grandmaCost) {
         cookies -= grandmaCost
         grandmas += 1
@@ -180,7 +313,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Grandma costs " + grandmaCost + " cookies!", DialogLayout.Bottom)
     }
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= farmCost) {
         cookies -= farmCost
         farms += 1
@@ -242,16 +375,16 @@ let factoryCost = 500
 let cookiesPerSecond = 0
 ```
 
-## Step 2 — Buy a Factory (Down button)
+## Step 2 — Buy a Factory (Left button)
 
-Add a ``||controller:on down button pressed||`` event.
+Add a ``||controller:on left button pressed||`` event.
 
 Use a simple ``if/else`` first (you will upgrade it in the next step):
 - If ``cookies >= factoryCost``: buy the factory (adds **47** cookiesPerSecond), multiply cost by 1.15
 - Else: show cost message
 
 ```blocks
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= factoryCost) {
         cookies -= factoryCost
         factories += 1
@@ -266,7 +399,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 3 — Multiple alternatives: upgrade the Grandma handler
 
-Open your ``||controller:on B button pressed||`` (Grandma) event.
+Open your ``||controller:on up button pressed||`` (Grandma) event.
 
 Right now it only has two outcomes (can afford / cannot afford). Let's add a **helpful middle message** using ``else if``.
 
@@ -286,7 +419,7 @@ if (cookies >= grandmaCost) {
 ```
 
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= grandmaCost) {
         cookies -= grandmaCost
         grandmas += 1
@@ -303,18 +436,18 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 4 — Apply the same pattern to Farm and Factory
 
-Update your ``||controller:on up button pressed||`` (Farm) event to also use three alternatives:
+Update your ``||controller:on right button pressed||`` (Farm) event to also use three alternatives:
 
 - If the player can afford → buy
 - Within 50% → "Almost there! Need X more cookies"
 - Otherwise → "Keep baking! Y costs X cookies"
 
-Do the same for ``||controller:on down button pressed||`` (Factory).
+Do the same for ``||controller:on left button pressed||`` (Factory).
 
 **Notice the pattern:** The *shape* of the code is the same for all three upgrades, just the variable names change. This is called a **pattern** in algorithm design.
 
 ```blocks
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= farmCost) {
         cookies -= farmCost
         farms += 1
@@ -362,9 +495,9 @@ game.onUpdateInterval(1000, function () {
 Test the game and verify each path works:
 
 1. Press B when you have 0 cookies — see the "keep baking" message
-2. Bake 8 cookies — press B and see the "almost there" message  
-3. Bake 15 cookies — press B and buy a grandma
-4. Bake 100 cookies — press Up for a farm
+2. Bake 8 cookies — press up and see the "almost there" message  
+3. Bake 15 cookies — press up and buy a grandma
+4. Bake 100 cookies — press right for a farm
 5. Build 5 grandmas and 3 farms — watch for the bonus!
 
 **Think about it:** Count how many different paths your program can take in just the B button event. (Answer: 3 paths, one per condition!)

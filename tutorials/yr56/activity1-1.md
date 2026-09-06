@@ -169,7 +169,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.setScore(cookies)
     cookie.startEffect(effects.spray, 200)
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= grandmaCost) {
         cookies -= grandmaCost
         grandmas += 1
@@ -180,7 +180,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Grandma costs " + grandmaCost + " cookies!", DialogLayout.Bottom)
     }
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= farmCost) {
         cookies -= farmCost
         farms += 1
@@ -239,7 +239,7 @@ let AButton = sprites.create(img`
     . . . . 6 6 6 6 6 . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-
+AButton.setPosition(100, 51)
 ```
 
 ```blocks
@@ -261,7 +261,7 @@ let AButton = sprites.create(img`
     . . . . 6 6 6 6 6 . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-AButton.setPosition(100, 49)
+AButton.setPosition(100, 51)
 ```
 ## Step 1.5 - Make a Label for Bake Button
 Next we need a label for our 'bake' button. To do this, we will want to do the following:
@@ -282,6 +282,7 @@ let BakeLabel = sprites.create(img`
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     `, SpriteKind.Player)
+BakeLabel.setPosition(100, 62)
 ```
 
 ```blocks
@@ -296,7 +297,7 @@ let BakeLabel = sprites.create(img`
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     `, SpriteKind.Player)
-BakeLabel.setPosition(100, 60)
+BakeLabel.setPosition(100, 62)
 ```
 ## Step 2 - Make a 'Grandma' Button
 Second, we need a 'Grandma' button  for individual 'Grandmas'. To do this, we will want to do the following:
@@ -323,7 +324,7 @@ let UpButton = sprites.create(img`
     . . . . . 6 9 9 9 9 . . . . . 
     . . . . . 6 6 6 6 6 . . . . . 
     `, SpriteKind.Player)
-
+UpButton.setPosition(136, 51)
 ```
 
 ```blocks
@@ -347,7 +348,7 @@ let UpButton = sprites.create(img`
     `, SpriteKind.Player)
     
 
-UpButton.setPosition(100, 49)
+UpButton.setPosition(136, 51)
 ```
 ## Step 2.5 - Make a Label for the 'Grandma' Button
 Now we will want a label for the up button we are using to 'create' 'Grandma's'
@@ -367,7 +368,7 @@ let GrandmaLabel = sprites.create(img`
     .f11111111111111111111111111111111111111f.
     ..ffffffffffffffffffffffffffffffffffffff..
 `, SpriteKind.Player)
-
+GrandmaLabel.setPosition(136, 62)
 ```
 
 ```blocks
@@ -383,7 +384,7 @@ let GrandmaLabel = sprites.create(img`
     ..ffffffffffffffffffffffffffffffffffffff..
 `, SpriteKind.Player)
 
-GrandmaLabel.setPosition(100, 60)
+GrandmaLabel.setPosition(136, 62)
 ```
 
 ## Step 3 - Make a 'Farm' Button
@@ -411,7 +412,7 @@ let RightButton = sprites.create(img`
     . . . 6 6 6 6 6 . . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-
+RightButton.setPosition(100, 90)
 ```
 
 ```blocks
@@ -436,7 +437,7 @@ let RightButton = sprites.create(img`
     
 
 
-RightButton.setPosition(100, 49)
+RightButton.setPosition(100, 90)
 ```
 ## Step 3.5 - Farm Label
 Now the farm label:
@@ -457,7 +458,7 @@ let FarmLabel = sprites.create(img`
     .f11111111111111111111111f.
     ..fffffffffffffffffffffff..
 `, SpriteKind.Player)
-
+FarmLabel.setPosition(100, 1000)
 ```
 
 ```blocks
@@ -474,14 +475,14 @@ let FarmLabel = sprites.create(img`
     ..fffffffffffffffffffffff..
 `, SpriteKind.Player)
 
-FarmLabel.setPosition(100, 60)
+FarmLabel.setPosition(100, 1000)
 ```
 
 
 ## Step 4 - Make a 'Factory' Button
 Lastly, the 'Factory' button:
 1. Setup a 'sprite' for the LeftButton. ``||sprites:set LeftButton to sprite of kind Player||``
-3. Now position the 'LeftButton' on the screen (recommended: *x:100, y:49*)
+2. Now position the 'LeftButton' on the screen (recommended: *x:100, y:49*)
 
 
 ```blockconfig.local
@@ -503,7 +504,7 @@ let LeftButton = sprites.create(img`
     .......66666....
     ................
 `, SpriteKind.Player)
-    
+LeftButton.setPosition(136, 90)    
 
 ```
 
@@ -528,7 +529,7 @@ let LeftButton = sprites.create(img`
 `, SpriteKind.Player)
     
 
-LeftButton.setPosition(100, 49)
+LeftButton.setPosition(136, 90)
 ```
 ## Step 4.5 - Factory Label
 Now the Factory Label:
@@ -566,7 +567,7 @@ let FactoryLabel = sprites.create(img`
     ..ffffffffffffffffffffffffffffffffff..
 `, SpriteKind.Player)
 
-FactoryLabel.setPosition(100, 60)
+FactoryLabel.setPosition(136, 100)
 ```
 
 ## Step 5 - Testing

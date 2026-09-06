@@ -165,6 +165,139 @@ ee4444eeee44eed44eee44444444dd.
 ............eeeeee.............
 ...............................
 `, SpriteKind.Player)
+let AButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . 7 7 7 1 1 . . . . . 
+    . . . . 7 7 7 7 7 7 7 1 . . . 
+    . . 6 7 7 7 7 7 7 7 7 7 1 . . 
+    . 6 7 7 7 7 7 6 6 7 7 7 7 . . 
+    . 6 7 7 7 7 6 7 7 6 7 7 7 1 . 
+    6 6 7 7 7 7 6 6 6 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 7 7 7 7 7 7 7 7 . 
+    . 6 6 7 7 7 7 7 7 7 7 7 7 . . 
+    . 6 6 6 7 7 7 7 7 7 7 7 6 . . 
+    . . 6 6 6 7 7 7 7 7 6 6 . . . 
+    . . . 6 6 6 6 6 6 6 6 . . . . 
+    . . . . 6 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+
+let BakeLabel = sprites.create(img`
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    f 1 1 f f f 1 1 1 f f 1 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 f 1 1 f 
+    f 1 1 f f f 1 1 f f f f 1 f f 1 1 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 1 1 1 f 
+    f 1 1 f f f f 1 f 1 1 f 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    `, SpriteKind.Player)
+
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+
+let GrandmaLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffff..
+    .f11111111111111111111111111111111111111f.
+    f11fff11ffff11ff11ff11fff11ff1ff11ff11f11f
+    f11f1111f11f1f11f1f1f1f11f1f1f1f1f11f1f11f
+    f11f1ff1ffff1ffff1f1f1f11f1f111f1ffff1f11f
+    f11f11f1f1f11f11f1f1f1f11f1f111f1f11f1111f
+    f11ffff1f11f1f11f1f1f1fff11f111f1f11f1f11f
+    .f11111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+let RightButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . 6 9 9 1 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    9 1 1 9 9 9 9 9 1 1 1 1 . 4 . 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    6 6 6 6 9 9 9 1 6 6 6 6 . 4 . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 6 6 6 6 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+    
+
+let FarmLabel = sprites.create(img`
+    ..fffffffffffffffffffffff..
+    .f11111111111111111111111f.
+    f11fff11ff11ffff1ff1ff1f11f
+    f11f111f11f1f11f1f1f1f1f11f
+    f11fff1ffff1ffff1f111f1f11f
+    f11f111f11f1f1f11f111f1111f
+    f11f111f11f1f11f1f111f1f11f
+    .f11111111111111111111111f.
+    ..fffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+let LeftButton = sprites.create(img`
+    ................
+    ................
+    .......69911....
+    .......69999....
+    .......69999....
+    .......69999....
+    .4.6911999991111
+    54.6999999999999
+    54.6999999999999
+    54.6999999999999
+    .4..666699916666
+    .......69991....
+    .......69991....
+    .......69999....
+    .......66666....
+    ................
+`, SpriteKind.Player)
+
+let FactoryLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111f.
+    f11fff11ff11fff1fff1ffff1ffff1f1f1f11f
+    f11f111f11f1f1111f11f11f1f11f1f1f1f11f
+    f11fff1ffff1f1111f11f11f1ffff11f11f11f
+    f11f111f11f1f1111f11f11f1f1f111f11111f
+    f11f111f11f1fff11f11ffff1f11f11f11f11f
+    .f1111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+BakeLabel.setPosition(100, 62)
+AButton.setPosition(100, 51)
+UpButton.setPosition(136, 51)
+GrandmaLabel.setPosition(136, 62)
+RightButton.setPosition(100, 90)
+FarmLabel.setPosition(100, 1000)
+LeftButton.setPosition(136, 90)
+FactoryLabel.setPosition(136, 100)
 cookie.setPosition(45, 75)
 info.setScore(0)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -172,7 +305,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.setScore(cookies)
     cookie.startEffect(effects.spray, 200)
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= grandmaCost) {
         cookies -= grandmaCost
         grandmas += 1
@@ -184,7 +317,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Keep baking! Grandma costs " + grandmaCost + " cookies.", DialogLayout.Bottom)
     }
 })
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= farmCost) {
         cookies -= farmCost
         farms += 1
@@ -196,7 +329,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Keep baking! Farm costs " + farmCost + " cookies.", DialogLayout.Bottom)
     }
 })
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= factoryCost) {
         cookies -= factoryCost
         factories += 1
@@ -314,7 +447,7 @@ game.onUpdateInterval(1000, function () {
 
 ## Step 3 — The Prestige system (complex branching)
 
-Add a ``||controller:on left button pressed||`` event. This handles the prestige action.
+Add a ``||controller:on B button pressed||`` event. This handles the prestige action.
 
 The algorithm (design this on paper first!):
 1. Check ``if prestigeLevel < 3`` (max 3 prestiges)
@@ -324,7 +457,7 @@ The algorithm (design this on paper first!):
 5. Else (prestigeLevel >= 3): show "Empire Complete!" message
 
 ```blocks
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (prestigeLevel < 3) {
         if (cookies >= cookieGoal) {
             prestigeLevel += 1
@@ -348,7 +481,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Step 4 — Win condition
 
-Add a final win condition in the update loop. The player wins when they have **prestigeLevel = 3** and **cookies >= 50000** (the final empire goal).
+Add a final win condition in the update loop. The player wins when they have **prestigeLevel = 3** and **cookies >= 50000** (the final crazy cookie clicker goal).
 
 ```blockconfig.local
 if (prestigeLevel >= 3 && cookies >= 50000) {
@@ -395,7 +528,7 @@ game.onUpdateInterval(1000, function () {
 Use the start of a game to show controls. In ``||loops:on start||``, add a ``||game:splash||`` screen explaining the controls:
 
 ```blocks
-game.splash("A: Bake  B: Grandma  Up: Farm  Down: Factory  Left: Prestige!")
+game.splash("A: Bake  Up: Grandma  Right: Farm  Left: Factory  B: Prestige!")
 ```
 
 Then add a second ``||game:on game update every 5000 ms||`` (every 5 seconds) that shows a status summary. Use a for loop to build a summary string:
@@ -409,7 +542,7 @@ game.onUpdateInterval(5000, function () {
 
 ## Step 6 — Final test: complete playthrough
 
-Play your complete Cookie Empire and verify all systems work together:
+Play your complete Crazy Cookie Clicker and verify all systems work together:
 
 1. Bake cookies → auto-bake starts → buy grandmas, farms, factories
 2. Reach 10 grandmas + 5 farms → verify the 4× multiplier activates
@@ -422,9 +555,9 @@ Play your complete Cookie Empire and verify all systems work together:
 - Inner if: cookies >= cookieGoal?
 - If yes: prestigeLevel becomes 3, multiplier becomes 4, cookies reset ✓
 
-## Cookie Empire Complete! @showdialog
+## Cookie Clicker Complete! @showdialog
 
-**You have built Cookie Empire — an incredible achievement!**
+**You have built a Crazy Cookie Clicker — an incredible achievement!**
 
 Here is everything you accomplished across all five activities:
 

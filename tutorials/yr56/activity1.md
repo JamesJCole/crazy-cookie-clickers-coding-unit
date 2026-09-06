@@ -397,11 +397,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 4 — Buy a Grandma (B button)
+## Step 4 — Buy a Grandma (Up button)
 
 Grandmas are the cheapest upgrade — they each produce 1 cookie per second.
 
-Add a ``||controller:on B button pressed||`` event. Inside it, add an ``||logic:if||`` to check ``cookies >= grandmaCost``.
+Add a ``||controller:on up button pressed||`` event. Inside it, add an ``||logic:if||`` to check ``cookies >= grandmaCost``.
 
 If true:
 - Subtract ``grandmaCost`` from ``cookies``
@@ -413,7 +413,7 @@ If true:
 If false: show a message with the cost.
 
 ```blocks
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= grandmaCost) {
         cookies -= grandmaCost
         grandmas += 1
@@ -426,11 +426,11 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 ```
 
-## Step 5 — Buy a Farm (Up button)
+## Step 5 — Buy a Farm (Right button)
 
 Farms produce 8 cookies per second each — but cost much more.
 
-Add a ``||controller:on up button pressed||`` event with a similar if/else structure.
+Add a ``||controller:on right button pressed||`` event with a similar if/else structure.
 
 If true:
 - Subtract ``farmCost`` from ``cookies``
@@ -440,7 +440,7 @@ If true:
 - Update score
 
 ```blocks
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= farmCost) {
         cookies -= farmCost
         farms += 1
@@ -471,8 +471,8 @@ game.onUpdateInterval(1000, function () {
 ## Step 7 — Test your shop!
 
 Press **Play** and try both upgrades:
-- Bake 15 cookies and buy a grandma (B)
-- Bake 100 cookies and buy a farm (Up)
+- Bake 15 cookies and buy a grandma (Up)
+- Bake 100 cookies and buy a farm (Right)
 - Watch the auto-baking get faster as you buy more!
 
 **Notice:** The grandma cost goes up after each purchase. Why is that a good game design decision?
