@@ -51,7 +51,7 @@ let cookiesPerSecond = 0
 
 ## Step 2 — Set up the scene and cookie sprite
 
-Set a background colour and create your cookie sprite. Centre it on screen at **x: 45, y: 70**.
+Set a background image and create your cookie sprite. Centre it on screen at **x: 45, y: 70**.
 
 Also add ``||info:set score to 0||`` to show the cookie count.
 
