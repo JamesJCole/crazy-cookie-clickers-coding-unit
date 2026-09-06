@@ -1,6 +1,6 @@
 {
     "name": "crazy-cookie-clickers-coding-unit",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "description": "Cookie Clicker MakeCode Arcade Skillmap — Australian Digital Technologies curriculum Year 3/4 and Year 5/6",
     "dependencies": {
         "device": "*"
@@ -16,6 +16,7 @@
         "tutorials/yr34/activity4.md",
         "tutorials/yr34/activity5.md",
         "tutorials/yr56/activity1.md",
+        "tutorials/yr56/activity1-1.md",
         "tutorials/yr56/activity2.md",
         "tutorials/yr56/activity3.md",
         "tutorials/yr56/activity4.md",
