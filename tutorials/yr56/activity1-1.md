@@ -1,61 +1,12 @@
-# Build the Shop
+# Adding Controls
 
-## Welcome to Crazy Cookie Clicker! @showdialog
-
-This is the **Year 5/6** track — a more complex challenge designed to push your thinking!
-
-In Crazy Cookie Clicker you will design and build a full upgrade shop. Instead of one upgrade, you will have **three** (Grandma, Farm, and Factory), each with their own variables and costs.
-
-In this first activity you will:
-- Set up all your game variables
-- Create the cookie sprite and score display
-- Add basic clicking
-- Build your first two upgrade purchases using simple ``if`` conditions
-
-By the end of all five activities you will have a complete Crazy Cookie Clicker game!
-
-**Before you code:** On paper (or in your head), think about this:
-- What variables will you need to track three different upgrades?
-- What information does the player need to see on screen?
-
-## Step 1 — Set up all variables
-
-A more complex game needs more variables. In ``||loops:on start||``, set up these variables:
-
-| Variable | Starting value |
-|----------|---------------|
-| ``cookies`` | 0 |
-| ``grandmas`` | 0 |
-| ``farms`` | 0 |
-| ``grandmaCost`` | 15 |
-| ``farmCost`` | 100 |
-| ``cookiesPerSecond`` | 0 |
-
-```blockconfig.local
+```template
 let cookies = 0
 let grandmas = 0
 let farms = 0
 let grandmaCost = 15
 let farmCost = 100
 let cookiesPerSecond = 0
-```
-
-```blocks
-let cookies = 0
-let grandmas = 0
-let farms = 0
-let grandmaCost = 15
-let farmCost = 100
-let cookiesPerSecond = 0
-```
-
-## Step 2 — Set up the scene and cookie sprite
-
-Set a background colour and create your cookie sprite. Centre it on screen at **x: 45, y: 70**.
-
-Also add ``||info:set score to 0||`` to show the cookie count.
-
-```blockconfig.local
 scene.setBackgroundImage(img`bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfffffffffffffffffbbfffffffffbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -213,83 +164,11 @@ ee4444eeee44eed44eee44444444dd.
 `, SpriteKind.Player)
 cookie.setPosition(45, 75)
 info.setScore(0)
-
-```
-
-```blocks
-scene.setBackgroundColor(3)
-let cookies = 0
-let grandmas = 0
-let farms = 0
-let grandmaCost = 15
-let farmCost = 100
-let cookiesPerSecond = 0
-let cookie = sprites.create(img`
-...............................
-............dddddd.............
-.........44444444444d..........
-.......e44444ed44dd444d........
-......e444444eee4444444d.......
-....e44444444eee44444d44dd.....
-....4444edd444e4444444444d.....
-...e444eeed444444444444444d....
-..e4444eeee444444dd444e4d4dd...
-..444444eee44444eed44eee444d...
-.e444444ee444444ee444eee4444d..
-.e44444444444444444444ee44444..
-e44ee444444444444444444444444..
-e44ee44444444ed44444444444444d.
-e444444444444eee4444444dd4444d.
-e444444444444ee4444444eedd444d.
-e444444e4444444444d444eeee444d.
-e44444eee44444444edd44eee4444d.
-ee4444eeee44eed44eee44444444dd.
-.e44444ee444eee44ee44444e444d..
-.ee44444e444eee44444444eeee44..
-.ee4444444444ee44444444eee44d..
-..e444444444444444444444e444...
-..ee444444e44444444444444444...
-...e44444eee444eee444444444....
-....ee444eee444eee444eed44.....
-.....ee444e4444eee44eeee4e.....
-......eee4444444e4444eee.......
-........eee4444444444ee........
-.........eeeee44444ee..........
-............eeeeee.............
-...............................
-`, SpriteKind.Player)
-cookie.setPosition(70, 60)
-info.setScore(0)
-```
-
-## Step 3 — Basic clicking
-
-Add an ``||controller:on A button pressed||`` event. Each press adds **1** to ``cookies`` and updates the score.
-
-```blocks
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     cookies += 1
     info.setScore(cookies)
     cookie.startEffect(effects.spray, 200)
 })
-```
-
-## Step 4 — Buy a Grandma (B button)
-
-Grandmas are the cheapest upgrade — they each produce 1 cookie per second.
-
-Add a ``||controller:on B button pressed||`` event. Inside it, add an ``||logic:if||`` to check ``cookies >= grandmaCost``.
-
-If true:
-- Subtract ``grandmaCost`` from ``cookies``
-- Add 1 to ``grandmas``
-- Increase ``cookiesPerSecond`` by 1
-- Make the next grandma cost more (multiply by **1.15** and round)
-- Update the score
-
-If false: show a message with the cost.
-
-```blocks
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= grandmaCost) {
         cookies -= grandmaCost
@@ -301,22 +180,6 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Grandma costs " + grandmaCost + " cookies!", DialogLayout.Bottom)
     }
 })
-```
-
-## Step 5 — Buy a Farm (Up button)
-
-Farms produce 8 cookies per second each — but cost much more.
-
-Add a ``||controller:on up button pressed||`` event with a similar if/else structure.
-
-If true:
-- Subtract ``farmCost`` from ``cookies``
-- Add 1 to ``farms``
-- Increase ``cookiesPerSecond`` by **8**
-- Multiply ``farmCost`` by **1.15** and round
-- Update score
-
-```blocks
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (cookies >= farmCost) {
         cookies -= farmCost
@@ -328,15 +191,6 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         game.showLongText("Farm costs " + farmCost + " cookies!", DialogLayout.Bottom)
     }
 })
-```
-
-## Step 6 — The automatic baking loop
-
-Add a ``||game:on game update every 1000 ms||`` loop.
-
-Inside it, check ``if cookiesPerSecond > 0``, then add ``cookiesPerSecond`` to ``cookies`` and update the score.
-
-```blocks
 game.onUpdateInterval(1000, function () {
     if (cookiesPerSecond > 0) {
         cookies += cookiesPerSecond
@@ -345,22 +199,328 @@ game.onUpdateInterval(1000, function () {
 })
 ```
 
-## Step 7 — Test your shop!
+## How are players meant to play the game? @showdialog
 
-Press **Play** and try both upgrades:
-- Bake 15 cookies and buy a grandma (B)
-- Bake 100 cookies and buy a farm (Up)
-- Watch the auto-baking get faster as you buy more!
+Players have the ability to do the following:
+- Bake Individual Cookies
+- Purchase a Grandma
+- Purchase a Farm
+- Purchase a Factory
 
-**Notice:** The grandma cost goes up after each purchase. Why is that a good game design decision?
+Each of these things have a different control that they are mapped to.
+We need to make those controls visible to the player.
 
-## Your shop is open! @showdialog
 
-**Excellent start!** You have built the foundation of Cookie Empire.
+## Step 1 - Make a 'Bake' button
+First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
+1. Setup a 'sprite' for the AButton. ``||sprites:set AButton to sprite of kind Player||`` 
+2. Create a 'sprite' for the BakeLabel.  ``||sprites:set BakeLabel to sprite of kind Player||`` 
+3. Now position the 'AButton' on the screen (recommended: *x:100, y:49*)
+4. Now position the 'BakeLabel' on the screen (recommended: *x:100, y:60*)
 
-**What you built:**
-- Six variables tracking multiple game states
-- Two upgrades with different costs and production rates
-- An automatic baking loop
+You can replace the 'example' components with your own versions!
 
-**Coming up:** In Activity 2, you will replace the simple ``if/else`` with ``else if`` chains — that is how you handle **multiple alternatives** in code!
+We are going to repeat this for the next few 'steps'.
+
+```blockconfig.local
+let AButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . 7 7 7 1 1 . . . . . 
+    . . . . 7 7 7 7 7 7 7 1 . . . 
+    . . 6 7 7 7 7 7 7 7 7 7 1 . . 
+    . 6 7 7 7 7 7 6 6 7 7 7 7 . . 
+    . 6 7 7 7 7 6 7 7 6 7 7 7 1 . 
+    6 6 7 7 7 7 6 6 6 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 7 7 7 7 7 7 7 7 . 
+    . 6 6 7 7 7 7 7 7 7 7 7 7 . . 
+    . 6 6 6 7 7 7 7 7 7 7 7 6 . . 
+    . . 6 6 6 7 7 7 7 7 6 6 . . . 
+    . . . 6 6 6 6 6 6 6 6 . . . . 
+    . . . . 6 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+let BakeLabel = sprites.create(img`
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    f 1 1 f f f 1 1 1 f f 1 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 f 1 1 f 
+    f 1 1 f f f 1 1 f f f f 1 f f 1 1 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 1 1 1 f 
+    f 1 1 f f f f 1 f 1 1 f 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    `, SpriteKind.Player)
+```
+
+```blocks
+let AButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . 7 7 7 1 1 . . . . . 
+    . . . . 7 7 7 7 7 7 7 1 . . . 
+    . . 6 7 7 7 7 7 7 7 7 7 1 . . 
+    . 6 7 7 7 7 7 6 6 7 7 7 7 . . 
+    . 6 7 7 7 7 6 7 7 6 7 7 7 1 . 
+    6 6 7 7 7 7 6 6 6 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 6 7 7 6 7 7 7 7 . 
+    6 6 7 7 7 7 7 7 7 7 7 7 7 7 . 
+    . 6 6 7 7 7 7 7 7 7 7 7 7 . . 
+    . 6 6 6 7 7 7 7 7 7 7 7 6 . . 
+    . . 6 6 6 7 7 7 7 7 6 6 . . . 
+    . . . 6 6 6 6 6 6 6 6 . . . . 
+    . . . . 6 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+let BakeLabel = sprites.create(img`
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    f 1 1 f f f 1 1 1 f f 1 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 f 1 1 f 
+    f 1 1 f f f 1 1 f f f f 1 f f 1 1 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 1 1 1 f 
+    f 1 1 f f f f 1 f 1 1 f 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    `, SpriteKind.Player)
+AButton.setPosition(100, 49)
+BakeLabel.setPosition(100, 60)
+```
+
+## Step 2 - Make a 'Grandma' Button
+First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
+1. Setup a 'sprite' for the UpButton. ``||sprites:set UpButton to sprite of kind Player||`` 
+2. Create a 'sprite' for the GrandmaLabel.  ``||sprites:set GrandmaLabel to sprite of kind Player||`` 
+3. Now position the 'UpButton' on the screen (recommended: *x:100, y:49*)
+4. Now position the 'GrandmaLabel' on the screen (recommended: *x:100, y:60*)
+
+
+```blockconfig.local
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+    
+let GrandmaLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffff..
+    .f11111111111111111111111111111111111111f.
+    f11fff11ffff11ff11ff11fff11ff1ff11ff11f11f
+    f11f1111f11f1f11f1f1f1f11f1f1f1f1f11f1f11f
+    f11f1ff1ffff1ffff1f1f1f11f1f111f1ffff1f11f
+    f11f11f1f1f11f11f1f1f1f11f1f111f1f11f1111f
+    f11ffff1f11f1f11f1f1f1fff11f111f1f11f1f11f
+    .f11111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+```
+
+```blocks
+let UpButton = sprites.create(img`
+    . . . . . . 5 5 5 . . . . . . 
+    . . . . . 4 4 4 4 4 . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . . . 6 9 9 1 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . 6 9 1 1 9 9 9 9 9 1 1 1 1 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . 6 9 9 9 9 9 9 9 9 9 9 9 9 . 
+    . . 6 6 6 6 9 9 9 1 6 6 6 6 . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 1 . . . . . 
+    . . . . . 6 9 9 9 9 . . . . . 
+    . . . . . 6 6 6 6 6 . . . . . 
+    `, SpriteKind.Player)
+    
+let GrandmaLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffff..
+    .f11111111111111111111111111111111111111f.
+    f11fff11ffff11ff11ff11fff11ff1ff11ff11f11f
+    f11f1111f11f1f11f1f1f1f11f1f1f1f1f11f1f11f
+    f11f1ff1ffff1ffff1f1f1f11f1f111f1ffff1f11f
+    f11f11f1f1f11f11f1f1f1f11f1f111f1f11f1111f
+    f11ffff1f11f1f11f1f1f1fff11f111f1f11f1f11f
+    .f11111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+UpButton.setPosition(100, 49)
+GrandmaLabel.setPosition(100, 60)
+```
+
+
+## Step 3 - Make a 'Farm' Button
+First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
+1. Setup a 'sprite' for the RightButton. ``||sprites:set RightButton to sprite of kind Player||`` 
+2. Create a 'sprite' for the FarmLabel.  ``||sprites:set FarmLabel to sprite of kind Player||`` 
+3. Now position the 'RightButton' on the screen (recommended: *x:100, y:49*)
+4. Now position the 'FarmLabel' on the screen (recommended: *x:100, y:60*)
+
+
+```blockconfig.local
+let RightButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . 6 9 9 1 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    9 1 1 9 9 9 9 9 1 1 1 1 . 4 . 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    6 6 6 6 9 9 9 1 6 6 6 6 . 4 . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 6 6 6 6 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+    
+let FarmLabel = sprites.create(img`
+    ..fffffffffffffffffffffff..
+    .f11111111111111111111111f.
+    f11fff11ff11ffff1ff1ff1f11f
+    f11f111f11f1f11f1f1f1f1f11f
+    f11fff1ffff1ffff1f111f1f11f
+    f11f111f11f1f1f11f111f1111f
+    f11f111f11f1f11f1f111f1f11f
+    .f11111111111111111111111f.
+    ..fffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+```
+
+```blocks
+let RightButton = sprites.create(img`
+    . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    . . . 6 9 9 1 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    9 1 1 9 9 9 9 9 1 1 1 1 . 4 . 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    9 9 9 9 9 9 9 9 9 9 9 9 . 4 5 
+    6 6 6 6 9 9 9 1 6 6 6 6 . 4 . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 1 . . . . . . . 
+    . . . 6 9 9 9 9 . . . . . . . 
+    . . . 6 6 6 6 6 . . . . . . . 
+    . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
+    
+let FarmLabel = sprites.create(img`
+    ..fffffffffffffffffffffff..
+    .f11111111111111111111111f.
+    f11fff11ff11ffff1ff1ff1f11f
+    f11f111f11f1f11f1f1f1f1f11f
+    f11fff1ffff1ffff1f111f1f11f
+    f11f111f11f1f1f11f111f1111f
+    f11f111f11f1f11f1f111f1f11f
+    .f11111111111111111111111f.
+    ..fffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+
+RightButton.setPosition(100, 49)
+FarmLabel.setPosition(100, 60)
+```
+
+
+## Step 4 - Make a 'Factory' Button
+First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
+1. Setup a 'sprite' for the RightButton. ``||sprites:set RightButton to sprite of kind Player||`` 
+2. Create a 'sprite' for the GrandmaLabel.  ``||sprites:set  FactoryLabel to sprite of kind Player||`` 
+3. Now position the 'RightButton' on the screen (recommended: *x:100, y:49*)
+4. Now position the 'FactoryLabel' on the screen (recommended: *x:100, y:60*)
+
+
+```blockconfig.local
+let LeftButton = sprites.create(img`
+    ................
+    ................
+    .......69911....
+    .......69999....
+    .......69999....
+    .......69999....
+    .4.6911999991111
+    54.6999999999999
+    54.6999999999999
+    54.6999999999999
+    .4..666699916666
+    .......69991....
+    .......69991....
+    .......69999....
+    .......66666....
+    ................
+`, SpriteKind.Player)
+    
+let FactoryLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111f.
+    f11fff11ff11fff1fff1ffff1ffff1f1f1f11f
+    f11f111f11f1f1111f11f11f1f11f1f1f1f11f
+    f11fff1ffff1f1111f11f11f1ffff11f11f11f
+    f11f111f11f1f1111f11f11f1f1f111f11111f
+    f11f111f11f1fff11f11ffff1f11f11f11f11f
+    .f1111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+```
+
+```blocks
+let LeftButton = sprites.create(img`
+    ................
+    ................
+    .......69911....
+    .......69999....
+    .......69999....
+    .......69999....
+    .4.6911999991111
+    54.6999999999999
+    54.6999999999999
+    54.6999999999999
+    .4..666699916666
+    .......69991....
+    .......69991....
+    .......69999....
+    .......66666....
+    ................
+`, SpriteKind.Player)
+    
+let FactoryLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111f.
+    f11fff11ff11fff1fff1ffff1ffff1f1f1f11f
+    f11f111f11f1f1111f11f11f1f11f1f1f1f11f
+    f11fff1ffff1f1111f11f11f1ffff11f11f11f
+    f11f111f11f1f1111f11f11f1f1f111f11111f
+    f11f111f11f1fff11f11ffff1f11f11f11f11f
+    .f1111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
+LeftButton.setPosition(100, 49)
+FactoryLabel.setPosition(100, 60)
+```
