@@ -19,6 +19,7 @@ By the end of all five activities you will have a complete Crazy Cookie Clicker 
 - What information does the player need to see on screen?
 
 ## Step 1 — Set up all variables
+In every game of cookie clicker, there is the concept of Grandmas, Farms and Factories. All of these help you make cookies faster!
 
 A more complex game needs more variables. In ``||loops:on start||``, set up these variables:
 
@@ -30,6 +31,8 @@ A more complex game needs more variables. In ``||loops:on start||``, set up thes
 | ``grandmaCost`` | 15 |
 | ``farmCost`` | 100 |
 | ``cookiesPerSecond`` | 0 |
+
+You can setup variables by clicking on the ``||variables||`` tab, then select 'make a variable'.
 
 ```blockconfig.local
 let cookies = 0

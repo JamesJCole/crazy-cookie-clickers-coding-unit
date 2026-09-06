@@ -214,9 +214,7 @@ We need to make those controls visible to the player.
 ## Step 1 - Make a 'Bake' button
 First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
 1. Setup a 'sprite' for the AButton. ``||sprites:set AButton to sprite of kind Player||`` 
-2. Create a 'sprite' for the BakeLabel.  ``||sprites:set BakeLabel to sprite of kind Player||`` 
-3. Now position the 'AButton' on the screen (recommended: *x:100, y:49*)
-4. Now position the 'BakeLabel' on the screen (recommended: *x:100, y:60*)
+2. Now position the 'AButton' on the screen (recommended: *x:100, y:49*)
 
 You can replace the 'example' components with your own versions!
 
@@ -241,17 +239,7 @@ let AButton = sprites.create(img`
     . . . . 6 6 6 6 6 . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-let BakeLabel = sprites.create(img`
-    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
-    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
-    f 1 1 f f f 1 1 1 f f 1 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
-    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 f 1 1 f 
-    f 1 1 f f f 1 1 f f f f 1 f f 1 1 1 f f f 1 1 f 1 1 f 
-    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 1 1 1 f 
-    f 1 1 f f f f 1 f 1 1 f 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
-    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
-    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
-    `, SpriteKind.Player)
+
 ```
 
 ```blocks
@@ -273,6 +261,16 @@ let AButton = sprites.create(img`
     . . . . 6 6 6 6 6 . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+AButton.setPosition(100, 49)
+```
+## Step 1.5 - Make a Label for Bake Button
+Next we need a label for our 'bake' button. To do this, we will want to do the following:
+1. Create a 'sprite' for the BakeLabel.  ``||sprites:set BakeLabel to sprite of kind Player||`` 
+2. Now position the 'BakeLabel' on the screen (recommended: *x:100, y:60*)
+
+You can replace the 'example' components with your own versions!
+
+```blockconfig.local
 let BakeLabel = sprites.create(img`
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
@@ -284,16 +282,26 @@ let BakeLabel = sprites.create(img`
     . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
     . . f f f f f f f f f f f f f f f f f f f f f f f . . 
     `, SpriteKind.Player)
-AButton.setPosition(100, 49)
-BakeLabel.setPosition(100, 60)
 ```
 
+```blocks
+let BakeLabel = sprites.create(img`
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    f 1 1 f f f 1 1 1 f f 1 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 f 1 1 f 
+    f 1 1 f f f 1 1 f f f f 1 f f 1 1 1 f f f 1 1 f 1 1 f 
+    f 1 1 f 1 1 f 1 f 1 1 f 1 f 1 f 1 1 f 1 1 1 1 1 1 1 f 
+    f 1 1 f f f f 1 f 1 1 f 1 f 1 1 f 1 f f f 1 1 f 1 1 f 
+    . f 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 f . 
+    . . f f f f f f f f f f f f f f f f f f f f f f f . . 
+    `, SpriteKind.Player)
+BakeLabel.setPosition(100, 60)
+```
 ## Step 2 - Make a 'Grandma' Button
-First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
+Second, we need a 'Grandma' button  for individual 'Grandmas'. To do this, we will want to do the following:
 1. Setup a 'sprite' for the UpButton. ``||sprites:set UpButton to sprite of kind Player||`` 
-2. Create a 'sprite' for the GrandmaLabel.  ``||sprites:set GrandmaLabel to sprite of kind Player||`` 
 3. Now position the 'UpButton' on the screen (recommended: *x:100, y:49*)
-4. Now position the 'GrandmaLabel' on the screen (recommended: *x:100, y:60*)
 
 
 ```blockconfig.local
@@ -315,18 +323,6 @@ let UpButton = sprites.create(img`
     . . . . . 6 9 9 9 9 . . . . . 
     . . . . . 6 6 6 6 6 . . . . . 
     `, SpriteKind.Player)
-    
-let GrandmaLabel = sprites.create(img`
-    ..ffffffffffffffffffffffffffffffffffffff..
-    .f11111111111111111111111111111111111111f.
-    f11fff11ffff11ff11ff11fff11ff1ff11ff11f11f
-    f11f1111f11f1f11f1f1f1f11f1f1f1f1f11f1f11f
-    f11f1ff1ffff1ffff1f1f1f11f1f111f1ffff1f11f
-    f11f11f1f1f11f11f1f1f1f11f1f111f1f11f1111f
-    f11ffff1f11f1f11f1f1f1fff11f111f1f11f1f11f
-    .f11111111111111111111111111111111111111f.
-    ..ffffffffffffffffffffffffffffffffffffff..
-`, SpriteKind.Player)
 
 ```
 
@@ -350,6 +346,16 @@ let UpButton = sprites.create(img`
     . . . . . 6 6 6 6 6 . . . . . 
     `, SpriteKind.Player)
     
+
+UpButton.setPosition(100, 49)
+```
+## Step 2.5 - Make a Label for the 'Grandma' Button
+Now we will want a label for the up button we are using to 'create' 'Grandma's'
+1. Create a 'sprite' for the GrandmaLabel.  ``||sprites:set GrandmaLabel to sprite of kind Player||`` 
+2. Now position the 'GrandmaLabel' on the screen (recommended: *x:100, y:60*)
+
+
+```blockconfig.local
 let GrandmaLabel = sprites.create(img`
     ..ffffffffffffffffffffffffffffffffffffff..
     .f11111111111111111111111111111111111111f.
@@ -362,17 +368,28 @@ let GrandmaLabel = sprites.create(img`
     ..ffffffffffffffffffffffffffffffffffffff..
 `, SpriteKind.Player)
 
-UpButton.setPosition(100, 49)
+```
+
+```blocks
+let GrandmaLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffffffff..
+    .f11111111111111111111111111111111111111f.
+    f11fff11ffff11ff11ff11fff11ff1ff11ff11f11f
+    f11f1111f11f1f11f1f1f1f11f1f1f1f1f11f1f11f
+    f11f1ff1ffff1ffff1f1f1f11f1f111f1ffff1f11f
+    f11f11f1f1f11f11f1f1f1f11f1f111f1f11f1111f
+    f11ffff1f11f1f11f1f1f1fff11f111f1f11f1f11f
+    .f11111111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
 GrandmaLabel.setPosition(100, 60)
 ```
 
-
 ## Step 3 - Make a 'Farm' Button
-First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
+Lets repeat for the Farm Button
 1. Setup a 'sprite' for the RightButton. ``||sprites:set RightButton to sprite of kind Player||`` 
-2. Create a 'sprite' for the FarmLabel.  ``||sprites:set FarmLabel to sprite of kind Player||`` 
-3. Now position the 'RightButton' on the screen (recommended: *x:100, y:49*)
-4. Now position the 'FarmLabel' on the screen (recommended: *x:100, y:60*)
+2. Now position the 'RightButton' on the screen (recommended: *x:100, y:49*)
 
 
 ```blockconfig.local
@@ -394,18 +411,6 @@ let RightButton = sprites.create(img`
     . . . 6 6 6 6 6 . . . . . . . 
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
-    
-let FarmLabel = sprites.create(img`
-    ..fffffffffffffffffffffff..
-    .f11111111111111111111111f.
-    f11fff11ff11ffff1ff1ff1f11f
-    f11f111f11f1f11f1f1f1f1f11f
-    f11fff1ffff1ffff1f111f1f11f
-    f11f111f11f1f1f11f111f1111f
-    f11f111f11f1f11f1f111f1f11f
-    .f11111111111111111111111f.
-    ..fffffffffffffffffffffff..
-`, SpriteKind.Player)
 
 ```
 
@@ -429,6 +434,18 @@ let RightButton = sprites.create(img`
     . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
     
+
+
+RightButton.setPosition(100, 49)
+```
+## Step 3.5 - Farm Label
+Now the farm label:
+1. Create a 'sprite' for the FarmLabel.  ``||sprites:set FarmLabel to sprite of kind Player||`` 
+2. Now position the 'FarmLabel' on the screen (recommended: *x:100, y:60*)
+
+
+```blockconfig.local
+    
 let FarmLabel = sprites.create(img`
     ..fffffffffffffffffffffff..
     .f11111111111111111111111f.
@@ -441,18 +458,30 @@ let FarmLabel = sprites.create(img`
     ..fffffffffffffffffffffff..
 `, SpriteKind.Player)
 
+```
 
-RightButton.setPosition(100, 49)
+```blocks
+
+let FarmLabel = sprites.create(img`
+    ..fffffffffffffffffffffff..
+    .f11111111111111111111111f.
+    f11fff11ff11ffff1ff1ff1f11f
+    f11f111f11f1f11f1f1f1f1f11f
+    f11fff1ffff1ffff1f111f1f11f
+    f11f111f11f1f1f11f111f1111f
+    f11f111f11f1f11f1f111f1f11f
+    .f11111111111111111111111f.
+    ..fffffffffffffffffffffff..
+`, SpriteKind.Player)
+
 FarmLabel.setPosition(100, 60)
 ```
 
 
 ## Step 4 - Make a 'Factory' Button
-First, we need a 'bake' button  for individual 'cookies'. To do this, we will want to do the following:
-1. Setup a 'sprite' for the RightButton. ``||sprites:set RightButton to sprite of kind Player||`` 
-2. Create a 'sprite' for the GrandmaLabel.  ``||sprites:set  FactoryLabel to sprite of kind Player||`` 
-3. Now position the 'RightButton' on the screen (recommended: *x:100, y:49*)
-4. Now position the 'FactoryLabel' on the screen (recommended: *x:100, y:60*)
+Lastly, the 'Factory' button:
+1. Setup a 'sprite' for the LeftButton. ``||sprites:set LeftButton to sprite of kind Player||``
+3. Now position the 'LeftButton' on the screen (recommended: *x:100, y:49*)
 
 
 ```blockconfig.local
@@ -475,17 +504,6 @@ let LeftButton = sprites.create(img`
     ................
 `, SpriteKind.Player)
     
-let FactoryLabel = sprites.create(img`
-    ..ffffffffffffffffffffffffffffffffff..
-    .f1111111111111111111111111111111111f.
-    f11fff11ff11fff1fff1ffff1ffff1f1f1f11f
-    f11f111f11f1f1111f11f11f1f11f1f1f1f11f
-    f11fff1ffff1f1111f11f11f1ffff11f11f11f
-    f11f111f11f1f1111f11f11f1f1f111f11111f
-    f11f111f11f1fff11f11ffff1f11f11f11f11f
-    .f1111111111111111111111111111111111f.
-    ..ffffffffffffffffffffffffffffffffff..
-`, SpriteKind.Player)
 
 ```
 
@@ -509,6 +527,17 @@ let LeftButton = sprites.create(img`
     ................
 `, SpriteKind.Player)
     
+
+LeftButton.setPosition(100, 49)
+```
+## Step 4.5 - Factory Label
+Now the Factory Label:
+1. Create a 'sprite' for the GrandmaLabel.  ``||sprites:set  FactoryLabel to sprite of kind Player||`` 
+2. Now position the 'FactoryLabel' on the screen (recommended: *x:100, y:60*)
+
+
+```blockconfig.local
+    
 let FactoryLabel = sprites.create(img`
     ..ffffffffffffffffffffffffffffffffff..
     .f1111111111111111111111111111111111f.
@@ -521,6 +550,25 @@ let FactoryLabel = sprites.create(img`
     ..ffffffffffffffffffffffffffffffffff..
 `, SpriteKind.Player)
 
-LeftButton.setPosition(100, 49)
+```
+
+```blocks
+    
+let FactoryLabel = sprites.create(img`
+    ..ffffffffffffffffffffffffffffffffff..
+    .f1111111111111111111111111111111111f.
+    f11fff11ff11fff1fff1ffff1ffff1f1f1f11f
+    f11f111f11f1f1111f11f11f1f11f1f1f1f11f
+    f11fff1ffff1f1111f11f11f1ffff11f11f11f
+    f11f111f11f1f1111f11f11f1f1f111f11111f
+    f11f111f11f1fff11f11ffff1f11f11f11f11f
+    .f1111111111111111111111111111111111f.
+    ..ffffffffffffffffffffffffffffffffff..
+`, SpriteKind.Player)
+
 FactoryLabel.setPosition(100, 60)
 ```
+
+## Step 5 - Testing
+Now try testing the game and make sure all the labels show.
+Try changing or updating the sprites with your own creations!
